@@ -1,0 +1,12 @@
+== 1.0.2 / unreleased
+* Moved to 'hoe' and GitHub.
+* Preparing for 2.0 which will be Ruby 1.9-only for UTF-8.
+
+== 1.0.1
+* Minor modification to the RubyGem release of Text::Hyphen to enable the
+  hyphen command-line program.
+
+== 1.0.0
+* Initial version based on TeX::Hyphen 0.4.0 (some changes have been
+  backported to TeX::Hyphen 0.5.0). 
+* Incorporated many hyphenation pattern files from CTAN.
