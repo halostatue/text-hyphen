@@ -5,6 +5,9 @@ http://github.com/halostatue/text-hyphen/
 
 == DESCRIPTION:
 
+Text::Hyphen will hyphenate words using modified versions of TeX hyphenation
+patterns.
+
 Text::Hyphen will properly hyphenate various words according to the rules of
 the language the word is written in. The algorithm is based on that of the TeX
 typesetting system by Donald E. Knuth. This is based on the Perl implementation
