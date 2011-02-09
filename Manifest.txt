@@ -12,6 +12,7 @@ lib/text/hyphen/language.rb
 lib/text/hyphen/language/ca.rb
 lib/text/hyphen/language/cs.rb
 lib/text/hyphen/language/da.rb
+lib/text/hyphen/language/de.rb
 lib/text/hyphen/language/de1.rb
 lib/text/hyphen/language/de2.rb
 lib/text/hyphen/language/en_uk.rb
@@ -38,5 +39,6 @@ lib/text/hyphen/language/no2.rb
 lib/text/hyphen/language/pl.rb
 lib/text/hyphen/language/pt.rb
 lib/text/hyphen/language/sv.rb
+test/test_bugs.rb
 test/test_text_hyphen.rb
 text-hyphen.gemspec
