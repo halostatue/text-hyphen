@@ -1,4 +1,4 @@
-== 1.0.2 / unreleased
+== 1.0.2 / 2011.02.09
 * Moved to 'hoe' and GitHub.
 * Preparing for 2.0 which will be Ruby 1.9-only for UTF-8.
 * Fixing German support (RubyForge 28498):
