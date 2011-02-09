@@ -110,7 +110,7 @@ class Text::Hyphen
   undef :language=
   def language=(lang)
     require 'text/hyphen/language' unless defined?(Text::Hyphen::Language)
-    if lang.kind_of?(Text::Hyphen::Language)
+    if lang.kind_of? Text::Hyphen::Language
       @iso_language = lang.to_s.split(%r{::}o)[-1].downcase
       @language     = lang
     else
@@ -130,6 +130,7 @@ class Text::Hyphen
     @iso_language = options[:language]
     @left         = options[:left]
     @right        = options[:right]
+    @language     = nil
 
     @cache        = {}
     @vcache       = {}
@@ -274,11 +275,14 @@ EOS
 
     @iso_language ||= "en_us"
 
-    require "text/hyphen/language/#{@iso_language}"
+    unless @language
+      require "text/hyphen/language/#{@iso_language}"
+      @language = Text::Hyphen::Language.const_get(@iso_language.upcase)
+      @iso_language = @language.isocode if @language.isocode
+    end
 
-    @language   = Text::Hyphen::Language.const_get(@iso_language.upcase)
-    @left     ||= @language.left
-    @right    ||= @language.right
+    @left ||= @language.left
+    @right ||= @language.right
 
     @iso_language
   end

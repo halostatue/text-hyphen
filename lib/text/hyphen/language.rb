@@ -101,12 +101,15 @@ class Text::Hyphen::Language
   attr_accessor :left
   attr_accessor :right
 
+  attr_accessor :isocode
+
   def initialize
-    self.encoding   "latin1"
-    self.patterns   ""
+    self.encoding "latin1"
+    self.patterns ""
     self.exceptions ""
-    self.left       = 2
-    self.right      = 2
+    self.left = 2
+    self.right = 2
+    self.isocode = nil
 
     yield self if block_given?
   end

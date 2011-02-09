@@ -65,13 +65,11 @@
 # Additional documentation can be found near the end of this file.
 #
 #++
-if defined?(Text::Hyphen::Language::DE)
-  raise LoadError, "Text::Hyphen::Language::DE has already been defined."
-end
 
 require 'text/hyphen/language'
 
-Text::Hyphen::Language::DE = Text::Hyphen::Language.new do |lang|
+Text::Hyphen::Language::DE1 = Text::Hyphen::Language.new do |lang|
+  lang.isocode = 'de'
   lang.patterns <<-PATTERNS
 .aa6l .ab3a4s .ab3ei .abi2 .ab3it .ab1l .ab1r .ab3u .ad3o4r .alti6 .ana3c
 .an5alg .an1e
@@ -719,5 +717,9 @@ s2s3z % ss1z ß1z
 ##
 ## End of file `dehyphn.tex'.
 end
-Text::Hyphen::Language::GER = Text::Hyphen::Language::DE
-Text::Hyphen::Language::DEU = Text::Hyphen::Language::DE
+
+unless defined? Text::Hyphen::Language::DE
+  Text::Hyphen::Language::DE = Text::Hyphen::Language::DE1
+  Text::Hyphen::Language::GER = Text::Hyphen::Language::DE
+  Text::Hyphen::Language::DEU = Text::Hyphen::Language::DE
+end

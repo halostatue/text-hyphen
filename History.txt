@@ -1,6 +1,17 @@
 == 1.0.2 / unreleased
 * Moved to 'hoe' and GitHub.
 * Preparing for 2.0 which will be Ruby 1.9-only for UTF-8.
+* Fixing German support (RubyForge 28498):
+  * Choosing 'de' as a language will load 'de1'. Choosing 'de1' or 'de2' will
+    load properly now, but they will be reported with an ISO language code of
+    'de' (new optional #isocode attribute on a language definition that will
+    override the #iso_language setting of a Text::Hyphen instance if set).
+  * Both 'de1' and 'de2' can be loaded simultaneously now, but the first one
+    loaded will claim the Text::Hyphen::Language::DE constant.
+* Added test cases for bugs:
+  * RubyForge 9807 (cannot reproduce)
+  * RubyForge 28128 (cannot reproduce)
+  * RubyForge 28498
 
 == 1.0.1
 * Minor modification to the RubyGem release of Text::Hyphen to enable the

@@ -84,6 +84,7 @@ when :visualise
     size -= (vis.size + 1)
     print "#{vis} "
   end
+  puts
 when :hyphenate
   ARGV.each do |word|
     hyp = hyphenator.hyphenate(word)
@@ -102,6 +103,7 @@ when :hyphenate_to
     size -= (vis.size + 1)
     print "#{vis} "
   end
+  puts
 when :stats
   puts hyphenator.stats
 end
