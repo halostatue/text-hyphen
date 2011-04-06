@@ -13,7 +13,7 @@ module Text; end
 #   word = "representation"
 #   points = hyp.hyphenate(word)    #=> [3, 5, 8, 10]
 #   puts hyp.visualize(word)        #=> rep-re-sen-ta-tion
-#   
+#
 #   en = Text::Hyphen.new(:left => 0, :right => 0)
 #   fr = Text::Hyphen.new(:language = "fr", :left => 0, :right => 0)
 #   puts en.visualise("organiser")  #=> or-gan-iser
@@ -170,7 +170,7 @@ class Text::Hyphen
     updater = Proc.new do |hash, str, pos|
       if hash.has_key?(str)
         $stderr.print "#{pos}: #{str}: #{hash[str]}" if DEBUG
-        hash[str].split(//).each_with_index do |cc, ii|
+        hash[str].each_char.with_index do |cc, ii|
           cc = cc.to_i
           result[ii + pos] = cc if cc > result[ii + pos]
         end
@@ -206,7 +206,7 @@ class Text::Hyphen
   def visualise(word)
     return @vcache[word] if @vcache.has_key?(word)
     w = word.dup
-    hyphenate(w).each_with_index do |pos, n| 
+    hyphenate(w).each_with_index do |pos, n|
       w[pos.to_i + n, 0] = '-' if pos != 0
     end
     @vcache[word] = w
@@ -254,7 +254,7 @@ EOS
   def updateresult(hash, str, pos)
     if hash.has_key?(str)
       STDERR.print "#{pos}: #{str}: #{hash[str]}" if DEBUG
-      hash[str].split('').each_with_index do |c, i| 
+      hash[str].each_char.with_index do |c, i|
         c = c.to_i
         @result[i + pos] = c if c > @result[i + pos]
       end

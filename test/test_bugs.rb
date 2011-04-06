@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 require 'test/unit'
 require 'text-hyphen'
 
@@ -6,8 +7,8 @@ class TestTextHyphen < Test::Unit::TestCase
     # http://rubyforge.org/tracker/index.php?func=detail&aid=9807&group_id=294&atid=1195
     # http://rubyforge.org/tracker/index.php?func=detail&aid=28498&group_id=294&atid=1195
     txt = "Dampfschifffahrtskapitänsmützenhalterhersteller"
-    pts = [5, 11, 17, 19, 26, 30, 33, 36, 39, 42, 46]
-    viz = "Dampf-schiff-fahrts-ka-pitäns-müt-zen-hal-ter-her-stel-ler"
+    pts = [5, 11, 17, 19, 21, 25, 28, 31, 34, 37, 40, 44]
+    viz = "Dampf-schiff-fahrts-ka-pi-täns-müt-zen-hal-ter-her-stel-ler"
 
     de1 = Text::Hyphen.new(:language => 'de')
     assert_equal pts, de1.hyphenate(txt)

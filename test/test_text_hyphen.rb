@@ -6,7 +6,7 @@ class TestTextHyphen < Test::Unit::TestCase
                playback presents programmable representation)
   POINTS  = [
     [2, 4, 8],     # additional
-    [],            # declination
+    [3, 5, 7],     # declination
     [2],           # going
     [4],           # leaving
     [3, 4],        # maximize
@@ -18,11 +18,11 @@ class TestTextHyphen < Test::Unit::TestCase
     [3, 5, 8, 10]  # representation
   ]
 
-  VISUAL = %w(ad-di-tion-al declination go-ing leav-ing max-i-mizes
+  VISUAL = %w(ad-di-tion-al dec-li-na-tion go-ing leav-ing max-i-mizes
               mul-ti-ple pe-ter play-back presents pro-gram-mable
               rep-re-sen-ta-tion)
 
-  HY_TO   = [ %w(addi- tional), [nil, 'declination'], %w(go- ing),
+  HY_TO   = [ %w(addi- tional), %w(dec- lination), %w(go- ing),
               %w(leav- ing), %w(maxi- mizes), %w(mul- tiple), %w(pe- ter),
               %w(play- back), [nil, 'presents'], %w(pro- grammable),
               %w(rep- resentation)]
