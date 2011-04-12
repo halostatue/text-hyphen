@@ -164,28 +164,32 @@ class Text::Hyphen
     res = @language.exceptions[word]
     return @cache[word] = make_result_list(res) if res
 
-    result = [0] * (word.split(//).size + 1)
-    rightstop = word.split(//).size - @right
+    letters = word.scan(@language.scan_re)
+    $stderr.puts letters.inspect if DEBUG
+    word_size = letters.size
+
+    result = [0] * (word_size + 1)
+    right_stop = word_size - @right
 
     updater = Proc.new do |hash, str, pos|
       if hash.has_key?(str)
         $stderr.print "#{pos}: #{str}: #{hash[str]}" if DEBUG
-        hash[str].each_char.with_index do |cc, ii|
+        hash[str].scan(@language.scan_re).each_with_index do |cc, ii|
           cc = cc.to_i
           result[ii + pos] = cc if cc > result[ii + pos]
         end
-        $stderr.print ": #{result}\n" if DEBUG
+        $stderr.print ": #{result.inspect}\n" if DEBUG
       end
     end
 
       # Walk the word
-    (0..rightstop).each do |pos|
-      restlength = word.length - pos
-      (1..restlength).each do |length|
-        substr = word[pos, length]
+    (0..right_stop).each do |pos|
+      rest_length = word_size - pos
+      (1..rest_length).each do |length|
+        substr = letters[pos, length].join('')
         updater[@language.hyphen, substr, pos]
         updater[@language.start, substr, pos] if pos.zero?
-        updater[@language.stop, substr, pos] if (length == restlength)
+        updater[@language.stop, substr, pos] if (length == rest_length)
       end
     end
 
@@ -254,7 +258,7 @@ EOS
   def updateresult(hash, str, pos)
     if hash.has_key?(str)
       STDERR.print "#{pos}: #{str}: #{hash[str]}" if DEBUG
-      hash[str].each_char.with_index do |c, i|
+      hash[str].scan(@language.scan_re).each_with_index do |c, i|
         c = c.to_i
         @result[i + pos] = c if c > @result[i + pos]
       end

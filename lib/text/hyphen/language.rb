@@ -22,6 +22,14 @@ class Text::Hyphen::Language
                             "utf-8"
                           end
 
+  # The character scan regular expression to use.
+  def scan_re #:nodoc:
+    if RUBY_VERSION < '1.9.1'
+      return %r{.}u if @encoding =~ /utf-?8/i
+    end
+    return %r{.}
+  end
+
   # The encoding of the hyphenation definitions. The text to be compared
   # must be of the same type.
   def encoding(enc = nil)
@@ -109,7 +117,7 @@ class Text::Hyphen::Language
       tag   = word.gsub(DASH_RE,'')
       value = "0" + word.gsub(EXCEPTION_DASH0_RE, '0').gsub(EXCEPTION_DASH1_RE, '1')
       value.gsub!(EXCEPTION_NONUM_RE, '0')
-      @exceptions[tag] = value.each_char.map { |c| c.to_i }
+      @exceptions[tag] = value.scan(self.scan_re).map { |c| c.to_i }
     end
 
     true
