@@ -38,7 +38,7 @@ between the following:
     # see all possible hyphenation points, not just those that meet
     # the minimum width requirements.
     en = Text::Hyphen.new(:left => 0, :right => 0)
-    fr = Text::Hyphen.new(:language = "fr", :left => 0, :right => 0)
+    fr = Text::Hyphen.new(:language => "fr", :left => 0, :right => 0)
 
     puts en.visualise("organiser")      #=> or-gan-iser
     puts fr.visualise("organiser")      #=> or-ga-ni-ser
