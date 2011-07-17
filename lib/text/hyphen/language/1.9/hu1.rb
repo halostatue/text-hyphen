@@ -4,8 +4,7 @@
 #   by MIKL\'OS Dezs\H o and MAYER Gyula from 1989 - 1998.
 #
 # The original copyright holds and is reproduced in the source to this file.
-# The Ruby version of these patterns are copyright 2004 Austin Ziegler and
-# are available under an MIT license. See LICENCE for more information.
+# The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # huhyph.tex  3.12
 # TeX hyphenation patterns for the Hungarian language.

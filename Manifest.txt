@@ -1,5 +1,4 @@
 .autotest
-COPYING.txt
 History.rdoc
 License.rdoc
 Manifest.txt

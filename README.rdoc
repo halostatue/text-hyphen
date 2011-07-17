@@ -37,8 +37,8 @@ Future versions will only work with Ruby 1.9 or later interpreters.
   points = hyp.hyphenate(word)  #=> [3, 5, 8, 10]
   puts hyp.visualize(word)      #=> rep-re-sen-ta-tion
 
-Text::Hyphen is truly multilingual. As an example, consider the difference
-between the following:
+Text::Hyphen is truly multilingual, with 29 languages or language variants
+supported. As an example, consider the difference between the following:
 
   require 'text/hyphen'
   # Using left and right minimum values of 0 ensures that you will see all

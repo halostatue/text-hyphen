@@ -4,8 +4,7 @@
 #   Frank Jensen (1992 - 1995).
 #
 # The original copyright holds and is reproduced in the source to this file.
-# The Ruby version of these patterns are copyright 2004 Austin Ziegler and
-# are available under an MIT license. See LICENCE for more information.
+# The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # nohyphen.tex, skrevet av Ivar Aavatsmark, juni 1992,
 # med utgangspunkt i danhyph.tex, skrevet av Frank Jensen.

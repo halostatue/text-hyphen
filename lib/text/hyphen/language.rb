@@ -1,6 +1,8 @@
+# -*- ruby encoding: utf-8 -*-
+
 # Language scaffolding support for Text::Hyphen. Language hyphenation
-# patterns are defined as instances of this class -- and only this class.
-# This is a deliberate "breaking" of Ruby's concept of duck-typing and is
+# patterns are defined as instances of this class—and only this class. This
+# is a deliberate "breaking" of Ruby's concept of duck-typing and is
 # intended to provide an indication that the patterns have been converted
 # from TeX encodings to other encodings (e.g., latin1 or UTF-8) that are
 # more suitable to general text manipulations.
@@ -123,11 +125,11 @@ class Text::Hyphen::Language
     true
   end
 
-  # The minimum number of letters that can be on the left side of a
-  # hyphenation for this language. Defaults to 2.
+  # No fewer than this number of letters will show up to the left of the
+  # hyphen for this language. The default value for this value is 2.
   attr_accessor :left
-  # The minimum number of letters that can be on the right side of a
-  # hyphenation for this language. Defaults to 2.
+  # No fewer than this number of letters will show up to the right of the
+  # hyphen for this language. The default value for this value is 2.
   attr_accessor :right
 
   # The ISO language code for this language. Generally only used when there

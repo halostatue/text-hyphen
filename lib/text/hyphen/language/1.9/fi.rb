@@ -4,8 +4,7 @@
 #   Computing Centre, University of Jyvaskyla, Finland, 1986 - 1989.
 #
 # The original copyright holds and is reproduced in the source to this file.
-# The Ruby version of these patterns are copyright 2004 Austin Ziegler and
-# are available under an MIT license. See LICENCE for more information.
+# The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # ----->  Finnish hyphenation patterns for MLPCTeX  <------
 # First release January -86 by Kauko Saarinen,

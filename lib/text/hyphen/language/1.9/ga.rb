@@ -4,8 +4,7 @@
 #   <scannell@slu.edu> (2004).
 #
 # The original copyright holds and is reproduced in the source to this file.
-# The Ruby version of these patterns are copyright 2004 Austin Ziegler and
-# are available under an MIT license. See LICENCE for more information.
+# The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # `gahyph.tex': Hyphenation patterns for Irish
 # Copyright (C) 2004 Kevin P. Scannell <scannell@slu.edu>

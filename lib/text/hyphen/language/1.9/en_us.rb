@@ -4,8 +4,7 @@
 #   with additions by Gerard D.C. Kuiken.
 #
 # The original copyright holds and is reproduced in the source to this file.
-# The Ruby version of these patterns are copyright 2004 Austin Ziegler and
-# are available under an MIT license. See LICENCE for more information.
+# The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # The Plain TeX hyphenation tables [NOT TO BE CHANGED IN ANY WAY!]
 #   % Patterns for standard Hyphenation Pattern Memory of 8000.

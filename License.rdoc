@@ -60,8 +60,8 @@ files only and do not contain the hyphenation patterns themselves.
 * lib/text/hyphen/language/de.rb
 * lib/text/hyphen/language/de1.rb
 * lib/text/hyphen/language/de2.rb
-* lib/text/hyphen/language/en\_uk.rb
-* lib/text/hyphen/language/en\_us.rb
+* lib/text/hyphen/language/en_uk.rb
+* lib/text/hyphen/language/en_us.rb
 * lib/text/hyphen/language/es.rb
 * lib/text/hyphen/language/et.rb
 * lib/text/hyphen/language/eu.rb
@@ -87,10 +87,10 @@ files only and do not contain the hyphenation patterns themselves.
 * lib/text/hyphen/language/pl.rb
 * lib/text/hyphen/language/pt.rb
 * lib/text/hyphen/language/sv.rb
-* test/data/bug\_9807\_latin1.rb
-* test/data/bug\_9807\_utf-8.rb
-* test/test\_bugs.rb
-* test/test\_text\_hyphen.rb
+* test/data/bug_9807_latin1.rb
+* test/data/bug_9807_utf-8.rb
+* test/test_bugs.rb
+* test/test_text_hyphen.rb
 * text-hyphen.gemspec
 * History.rdoc
 * License.rdoc
@@ -104,8 +104,8 @@ files only and do not contain the hyphenation patterns themselves.
 * lib/text/hyphen/language/1.8/da.rb
 * lib/text/hyphen/language/1.8/de1.rb
 * lib/text/hyphen/language/1.8/de2.rb
-* lib/text/hyphen/language/1.8/en\_uk.rb
-* lib/text/hyphen/language/1.8/en\_us.rb
+* lib/text/hyphen/language/1.8/en_uk.rb
+* lib/text/hyphen/language/1.8/en_us.rb
 * lib/text/hyphen/language/1.8/es.rb
 * lib/text/hyphen/language/1.8/et.rb
 * lib/text/hyphen/language/1.8/eu.rb
@@ -133,8 +133,8 @@ files only and do not contain the hyphenation patterns themselves.
 * lib/text/hyphen/language/1.9/da.rb
 * lib/text/hyphen/language/1.9/de1.rb
 * lib/text/hyphen/language/1.9/de2.rb
-* lib/text/hyphen/language/1.9/en\_uk.rb
-* lib/text/hyphen/language/1.9/en\_us.rb
+* lib/text/hyphen/language/1.9/en_uk.rb
+* lib/text/hyphen/language/1.9/en_us.rb
 * lib/text/hyphen/language/1.9/es.rb
 * lib/text/hyphen/language/1.9/et.rb
 * lib/text/hyphen/language/1.9/eu.rb

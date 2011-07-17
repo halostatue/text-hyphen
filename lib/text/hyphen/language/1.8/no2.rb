@@ -3,8 +3,7 @@
 #   D.F. Langmyhr (1994).
 #
 # The original copyright holds and is reproduced in the source to this file.
-# The Ruby version of these patterns are copyright 2004 Austin Ziegler and
-# are available under an MIT license. See LICENCE for more information.
+# The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # Norwegian hyphenation patterns generated Fri Nov 18 17:02:41 MET 1994.
 # These patterns are made by `patgen2' and based on    16268 words

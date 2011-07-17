@@ -3,8 +3,7 @@
 #   Converted from the TeX hyphenation/eehyph.tex file, by E. Saar (2003).
 #
 # The original copyright holds and is reproduced in the source to this file.
-# The Ruby version of these patterns are copyright 2004 Austin Ziegler and
-# are available under an MIT license. See LICENCE for more information.
+# The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # Estonian hyphenation patterns (T1 encoding).
 # Copyright 2003 E. Saar
