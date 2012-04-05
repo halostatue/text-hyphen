@@ -31,11 +31,11 @@ Future versions will only work with Ruby 1.9 or later interpreters.
   require 'text/hyphen'
   hh = Text::Hyphen.new(:language => 'en_us', :left => 2, :right => 2)
   # Defaults to the above
-  hh = TeX::Hyphen.new
+  hh = Text::Hyphen.new
 
   word = "representation"
-  points = hyp.hyphenate(word)  #=> [3, 5, 8, 10]
-  puts hyp.visualize(word)      #=> rep-re-sen-ta-tion
+  points = hh.hyphenate(word)  #=> [3, 5, 8, 10]
+  puts hh.visualize(word)      #=> rep-re-sen-ta-tion
 
 Text::Hyphen is truly multilingual, with 29 languages or language variants
 supported. As an example, consider the difference between the following:
