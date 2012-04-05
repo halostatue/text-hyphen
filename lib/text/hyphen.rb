@@ -7,7 +7,7 @@ end
 # a specific language's hyphenation patterns.
 class Text::Hyphen
   DEBUG   = false
-  VERSION = '1.2'
+  VERSION = '1.2.1'
 
   DEFAULT_MIN_LEFT  = 2
   DEFAULT_MIN_RIGHT = 2
