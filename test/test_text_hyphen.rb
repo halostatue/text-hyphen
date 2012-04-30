@@ -27,7 +27,7 @@ class TestTextHyphen < Test::Unit::TestCase
               %w(play- back), [nil, 'presents'], %w(pro- grammable),
               %w(rep- resentation)]
 
-  SOFT_HYPHEN = "1.9".respond_to?(:encoding) ? "\u00AD" : "\302\255"
+  SOFT_HYPHEN = "&shy;"
 
   def test_hyphenate
     @r = []

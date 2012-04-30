@@ -150,6 +150,10 @@ class Text::Hyphen
   #
   #   hyp.visualize('representation') #=> rep-re-sen-ta-tion
   #
+  # Any string can be set instead of the default hyphen:
+  #
+  #   hyp.visualize('example', '&shy;') #=> exam&shy;ple
+  #
   # Because hyphenation can be expensive, if the word has been visualised
   # previously, it will be returned from a per-instance cache.
   def visualise(word, hyphen = '-')
@@ -169,6 +173,10 @@ class Text::Hyphen
   end
 
   # This function will hyphenate a word so that the first point is at most
+  #
+  # NOTE: if hyphen is set to a string, it will still be counted as one
+  # character (since it represents a hyphen)
+  #
   # +size+ characters.
   def hyphenate_to(word, size, hyphen = '-')
     point = hyphenate(word).delete_if { |e| e >= size }.max
