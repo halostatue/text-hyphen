@@ -38,6 +38,11 @@ interpreters.
   points = hh.hyphenate(word)  #=> [3, 5, 8, 10]
   puts hh.visualize(word)      #=> rep-re-sen-ta-tion
 
+Both visualize and hyphenate_to methods allow choosing a custom hyphen:
+
+  puts hh.visualize(word, "&shy;") #=> rep&shy;re&shy;sen&shy;ta&shy;tion
+
+
 Text::Hyphen is truly multilingual, with 29 languages or language variants
 supported. As an example, consider the difference between the following:
 
