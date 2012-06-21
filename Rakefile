@@ -12,7 +12,7 @@ Hoe.spec 'text-hyphen' do |spec|
   developer('Austin Ziegler', 'austin@rubyforge.org')
 
   self.rubyforge_name = 'text-format'
-  spec.remote_rdoc_dir = 'text-hyphen/rdoc'
+  spec.remote_rdoc_dir = 'text-hyphen'
   spec.rsync_args << ' --exclude=statsvn/'
 
   spec.history_file = 'History.rdoc'
