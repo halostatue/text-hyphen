@@ -27,6 +27,8 @@ class TestTextHyphen < Test::Unit::TestCase
               %w(play- back), [nil, 'presents'], %w(pro- grammable),
               %w(rep- resentation)]
 
+  SOFT_HYPHEN = "&shy;"
+
   def test_hyphenate
     @r = []
     a = Text::Hyphen.new do |xx|
@@ -52,5 +54,15 @@ class TestTextHyphen < Test::Unit::TestCase
     assert_nothing_raised { WORDS.each { |w| @r << a.hyphenate_to(w, 5) } }
     assert_equal(HY_TO, @r)
     WORDS.each { |w| assert_not_nil(a.instance_eval { @cache[w] }) }
+  end
+
+  def test_alt_hyphen_for_visualize
+    a = Text::Hyphen.new.visualize('backpack', SOFT_HYPHEN)
+    assert_equal "back#{SOFT_HYPHEN}pack", a
+  end
+
+  def test_alt_hyphen_for_hyphenate_to
+    a = Text::Hyphen.new.hyphenate_to('backpack', 5, SOFT_HYPHEN)
+    assert_equal ["back#{SOFT_HYPHEN}", 'pack'], a
   end
 end
