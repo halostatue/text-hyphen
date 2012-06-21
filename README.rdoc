@@ -15,10 +15,10 @@ hyphenation pattern files are based on the sources available from
 {CTAN}[http://www.ctan.org] as of 2004.12.19 and have been manually translated
 by Austin Ziegler.
 
-This is a minor release fixing documentation errors. This release provides both
-Ruby 1.8.7 and Ruby 1.9.2 support. This is the last major release supporting
-Ruby 1.8 interpreters. Future versions will only work with Ruby 1.9 or later
-interpreters.
+This is a small feature release adding support for custom hyphens and fixing a
+bug in ruby-hyphen. This release provides both Ruby 1.8.7 and Ruby 1.9.2
+support. This is the last major release supporting Ruby 1.8 interpreters.
+Future versions will only work with Ruby 1.9 or later interpreters.
 
 == Where
 

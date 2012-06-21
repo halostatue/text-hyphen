@@ -9,16 +9,12 @@
 
 require 'optparse'
 require 'ostruct'
-
-begin
-  require 'text/hyphen'
-rescue LoadError
-  require 'rubygems'
-  require 'text/hyphen'
-end
+require 'text/hyphen'
 
 options = OpenStruct.new
 options.action = :visualise
+options.dash = '-'
+
 ARGV.options do |opt|
   opt.banner = "Usage: #{File.basename($0)} [options] [mode] word+"
   opt.separator ""
@@ -48,6 +44,9 @@ ARGV.options do |opt|
   opt.on('-l', '--language LANGUAGE', 'Loads the specified language resource.') { |lang|
     options.language = lang
   }
+  opt.on('-d', '--hyphen DASH', 'Sets the hyphen character. If not provided, uses the normal hyphen ("-").') { |dash|
+    options.dash = dash
+  }
 
   opt.separator ""
   opt.on_tail('-h', '--help', 'Shows this help') {
@@ -63,7 +62,7 @@ end
 
 if ARGV.empty? and options.action != :stats
   $stderr.puts ARGV.options
-  exit 0
+  exit 1
 end
 
 hyphenator = Text::Hyphen.new do |h|
@@ -76,7 +75,7 @@ case options.action
 when :visualise
   size = 80
   ARGV.each do |word|
-    vis = hyphenator.visualise(word)
+    vis = hyphenator.visualise(word, options.dash)
     if (size - vis.size - 1) < 0
       puts
       size = 80
@@ -95,7 +94,7 @@ when :hyphenate
 when :hyphenate_to
   size = 80
   ARGV.each do |word|
-    vis = hyphenator.visualise_to(word, options.size)
+    vis = hyphenator.hyphenate_to(word, options.size, options.dash)
     if (size - vis.size - 1) < 0
       puts
       size = 80

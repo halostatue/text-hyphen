@@ -1,4 +1,5 @@
 # -*- ruby encoding: utf-8 -*-
+
 module Text # :nodoc:
 end
 
@@ -7,7 +8,7 @@ end
 # a specific language's hyphenation patterns.
 class Text::Hyphen
   DEBUG   = false
-  VERSION = '1.2.1'
+  VERSION = '1.3'
 
   DEFAULT_MIN_LEFT  = 2
   DEFAULT_MIN_RIGHT = 2
@@ -259,3 +260,5 @@ EOS
     require File.join(p, v, f)
   end
 end
+
+# vim: syntax=ruby
