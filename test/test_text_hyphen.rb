@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'test/unit'
 require 'text-hyphen'
 
@@ -64,5 +65,10 @@ class TestTextHyphen < Test::Unit::TestCase
   def test_alt_hyphen_for_hyphenate_to
     a = Text::Hyphen.new.hyphenate_to('backpack', 5, SOFT_HYPHEN)
     assert_equal ["back#{SOFT_HYPHEN}", 'pack'], a
+  end
+
+  def test_russian
+    a = Text::Hyphen.new(:language => 'ru').visualize('скоропалительный')
+    assert_equal "ско-ро-па-ли-тель-ный", a
   end
 end
