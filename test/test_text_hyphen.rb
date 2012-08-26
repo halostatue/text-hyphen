@@ -60,11 +60,15 @@ class TestTextHyphen < Test::Unit::TestCase
   def test_alt_hyphen_for_visualize
     a = Text::Hyphen.new.visualize('backpack', SOFT_HYPHEN)
     assert_equal "back#{SOFT_HYPHEN}pack", a
+
+    a = Text::Hyphen.new.visualize('representation', SOFT_HYPHEN)
+    assert_equal "rep#{SOFT_HYPHEN}re#{SOFT_HYPHEN}sen#{SOFT_HYPHEN}ta#{SOFT_HYPHEN}tion", a
   end
 
   def test_alt_hyphen_for_hyphenate_to
     a = Text::Hyphen.new.hyphenate_to('backpack', 5, SOFT_HYPHEN)
     assert_equal ["back#{SOFT_HYPHEN}", 'pack'], a
+
   end
 
   def test_russian

@@ -8,7 +8,7 @@ end
 # a specific language's hyphenation patterns.
 class Text::Hyphen
   DEBUG   = false
-  VERSION = '1.3'
+  VERSION = '1.4'
 
   DEFAULT_MIN_LEFT  = 2
   DEFAULT_MIN_RIGHT = 2
@@ -160,8 +160,11 @@ class Text::Hyphen
   def visualise(word, hyphen = '-')
     return @vcache[word] if @vcache.has_key?(word)
     w = word.dup
+    s = hyphen.size
     hyphenate(w).each_with_index do |pos, n|
-      w[pos.to_i + n, 0] = hyphen if pos != 0
+      # Insert the hyphen string at the ported position plus the offset of
+      # the last hyphen string inserted.
+      w[pos.to_i + (n * s), 0] = hyphen unless pos.zero?
     end
     @vcache[word] = w
   end
