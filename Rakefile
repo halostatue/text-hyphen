@@ -6,14 +6,14 @@ require 'hoe'
 Hoe.plugin :doofus
 Hoe.plugin :gemspec
 Hoe.plugin :git
-Hoe.plugin :rubyforge
+# Hoe.plugin :rubyforge
 
 Hoe.spec 'text-hyphen' do |spec|
   developer('Austin Ziegler', 'austin@rubyforge.org')
 
-  self.rubyforge_name = 'text-format'
-  spec.remote_rdoc_dir = 'text-hyphen'
-  spec.rsync_args << ' --exclude=statsvn/'
+# self.rubyforge_name = 'text-format'
+# spec.remote_rdoc_dir = 'text-hyphen'
+# spec.rsync_args << ' --exclude=statsvn/'
 
   spec.history_file = 'History.rdoc'
   spec.readme_file = 'README.rdoc'
