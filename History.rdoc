@@ -1,3 +1,10 @@
+== 1.4.1 / 2012.08.27
+
+* Bug Fix:
+  * Evgeny Lapin (https://github.com/jenkek) pointed out that I forgot to
+    include the new Russian-language hyphenation files, breaking the gem for
+    use with Russian. Oops.
+
 == 1.4 / 2012.08.25
 
 * Feature:
