@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.21"
   s.summary = "Text::Hyphen is a Ruby library to hyphenate words in various languages using Ruby-fied versions of TeX hyphenation patterns"
   s.test_files = ["test/test_bugs.rb", "test/test_text_hyphen.rb"]
+  s.license = "MIT"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
