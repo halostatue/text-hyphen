@@ -67,6 +67,7 @@ lib/text/hyphen/language/1.9/no2.rb
 lib/text/hyphen/language/1.9/pl.rb
 lib/text/hyphen/language/1.9/pt.rb
 lib/text/hyphen/language/1.9/ru.rb
+lib/text/hyphen/language/1.9/sk.rb
 lib/text/hyphen/language/1.9/sv.rb
 lib/text/hyphen/language/ca.rb
 lib/text/hyphen/language/cs.rb
@@ -101,6 +102,7 @@ lib/text/hyphen/language/no2.rb
 lib/text/hyphen/language/pl.rb
 lib/text/hyphen/language/pt.rb
 lib/text/hyphen/language/ru.rb
+lib/text/hyphen/language/sk.rb
 lib/text/hyphen/language/sv.rb
 test/data/bug_9807_latin1.rb
 test/data/bug_9807_utf-8.rb
