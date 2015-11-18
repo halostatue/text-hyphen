@@ -60,6 +60,7 @@ lib/text/hyphen/language/1.9/id.rb
 lib/text/hyphen/language/1.9/is.rb
 lib/text/hyphen/language/1.9/it.rb
 lib/text/hyphen/language/1.9/la.rb
+lib/text/hyphen/language/1.9/lt.rb
 lib/text/hyphen/language/1.9/mn.rb
 lib/text/hyphen/language/1.9/nl.rb
 lib/text/hyphen/language/1.9/no1.rb
@@ -92,6 +93,7 @@ lib/text/hyphen/language/id.rb
 lib/text/hyphen/language/is.rb
 lib/text/hyphen/language/it.rb
 lib/text/hyphen/language/la.rb
+lib/text/hyphen/language/lt.rb
 lib/text/hyphen/language/mn.rb
 lib/text/hyphen/language/ms.rb
 lib/text/hyphen/language/nl.rb
