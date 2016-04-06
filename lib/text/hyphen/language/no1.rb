@@ -1,4 +1,4 @@
 # -*- encoding: utf-8 -*-
 
 Text::Hyphen.require_real_hyphenation_file(__FILE__)
-Text::Hyphen::Language.aliases_for "NO1" => "NO NOR"
+Text::Hyphen::Language.aliases_for "NO1" => %W(NO NOR)
