@@ -15,12 +15,12 @@ class TestTextHyphen < Test::Unit::TestCase
     [2],           # peter
     [4],           # playback
     [],            # presents
-    [3, 7],        # programmable -- 20041220 New hyphenation directives.
+    [3, 7, 9],     # programmable
     [3, 5, 8, 10]  # representation
   ]
 
   VISUAL = %w(ad-di-tion-al dec-li-na-tion go-ing leav-ing max-i-mizes
-              mul-ti-ple pe-ter play-back presents pro-gram-mable
+              mul-ti-ple pe-ter play-back presents pro-gram-ma-ble
               rep-re-sen-ta-tion)
 
   HY_TO   = [ %w(addi- tional), %w(dec- lination), %w(go- ing),
