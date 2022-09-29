@@ -22,6 +22,7 @@ present in a given Language File, it should be considered under the terms of
 TeX.
 
 === Library License
+
 * Copyright Austin Ziegler, 2004–2012
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -48,6 +49,7 @@ copyrights on original versions still stand; Text::Hyphen is a derivative work
 of these and other projects.
 
 === Library Files
+
 Note that while this list appears to include language files, these are "loader"
 files only and do not contain the hyphenation patterns themselves.
 
@@ -99,6 +101,7 @@ files only and do not contain the hyphenation patterns themselves.
 * bin/ruby-hyphen
 
 === Language Files
+
 * lib/text/hyphen/language/1.8/ca.rb
 * lib/text/hyphen/language/1.8/cs.rb
 * lib/text/hyphen/language/1.8/da.rb

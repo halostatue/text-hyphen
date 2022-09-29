@@ -1,4 +1,7 @@
 .autotest
+.gemtest
+.hoerc
+Gemfile
 History.rdoc
 License.rdoc
 Manifest.txt
@@ -106,4 +109,3 @@ test/data/bug_9807_latin1.rb
 test/data/bug_9807_utf-8.rb
 test/test_bugs.rb
 test/test_text_hyphen.rb
-text-hyphen.gemspec

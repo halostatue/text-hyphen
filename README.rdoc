@@ -1,5 +1,8 @@
 = text-hyphen
 
+Home :: https://rubygems.org/gems/text-hyphen
+Issues :: https://rubygems.org/gems/text-hyphen/issues
+
 == Description
 
 Text::Hyphen is a Ruby library to hyphenate words in various languages using
@@ -20,13 +23,6 @@ bug in the custom hyphen support introduced last version. This release provides
 both Ruby 1.8.7 and Ruby 1.9.2 support (but please read below). In short, Ruby
 1.8 support is deprecated and I will not be providing any bug fixes related to
 Ruby 1.8. New features will be developed and tested against Ruby 1.9 only.
-
-== Where
-
-* {RubyForge}[http://rubyforge.org/projects/text-format/]
-* {RubyGems}[https://rubygems.org/gems/text-hyphen]
-* {GitHub}[https://github.com/halostatue/text-hyphen/]
-* {RDoc}[http://rdoc.info/github/halostatue/text-hyphen/master/frames]
 
 == Synopsis
 

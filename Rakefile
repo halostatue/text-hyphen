@@ -1,28 +1,26 @@
-# -*- ruby encoding: utf-8 -*-
+# -*- ruby -*-
 
-require 'rubygems'
-require 'hoe'
+require "rubygems"
+require "hoe"
+require "rake/clean"
 
 Hoe.plugin :doofus
-Hoe.plugin :gemspec
+Hoe.plugin :gemspec2
 Hoe.plugin :git
-# Hoe.plugin :rubyforge
 
-Hoe.spec 'text-hyphen' do |spec|
-  developer('Austin Ziegler', 'austin@rubyforge.org')
+Hoe.spec "text-hyphen" do |spec|
+  developer("Austin Ziegler", "halostatue@gmail.com")
 
-# self.rubyforge_name = 'text-format'
-# spec.remote_rdoc_dir = 'text-hyphen'
-# spec.rsync_args << ' --exclude=statsvn/'
+  spec.licenses = ["MIT", "Various"]
 
-  spec.history_file = 'History.rdoc'
-  spec.readme_file = 'README.rdoc'
+  spec.history_file = "History.rdoc"
+  spec.readme_file = "README.rdoc"
   spec.extra_rdoc_files = FileList["*.rdoc"].to_a
 
-  self.extra_dev_deps << ['hoe-doofus', '~> 1.0']
-  self.extra_dev_deps << ['hoe-gemspec', '~> 1.0']
-  self.extra_dev_deps << ['hoe-git', '~> 1.0']
-  self.extra_dev_deps << ['hoe-seattlerb', '~> 1.0']
+  spec.extra_dev_deps << ["hoe-doofus", "~> 1.0"]
+  spec.extra_dev_deps << ["hoe-gemspec2", "~> 1.1"]
+  spec.extra_dev_deps << ["hoe-git", "~> 1.6"]
+  spec.extra_dev_deps << ["hoe-seattlerb", "~> 1.0"]
 end
 
 # vim: syntax=ruby
