@@ -87,9 +87,20 @@ when :visualise
 when :hyphenate
   ARGV.each do |word|
     hyp = hyphenator.hyphenate(word)
-    print "#{word}: "
-    hyp.each { |pt| print "#{word[pt, 1]} " }
-    puts
+    if hyp.kind_of?(Array)
+      split_word = word.split(/[[:blank:]]/)
+      hyp.each_with_index do |single_hyp, i|
+        unless single_hyp.empty?
+          print "#{split_word[i]}: "
+          single_hyp.each { |pt| print "#{split_word[i][pt, 1]} "}
+          puts
+        end
+      end
+    else
+      print "#{word}: "
+      hyp.each { |pt| print "#{word[pt, 1]} " }
+      puts
+    end
   end
 when :hyphenate_to
   size = 80

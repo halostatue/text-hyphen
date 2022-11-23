@@ -30,6 +30,9 @@ class TestTextHyphen < Test::Unit::TestCase
 
   SOFT_HYPHEN = "&shy;"
 
+  VISUAL_SENTENCE = "This use-ful li-brary sup-port-s sen-tences."
+  POINTS_SENTENCE = [[], [3], [2], [3, 7], [3]]
+
   def test_hyphenate
     @r = []
     a = Text::Hyphen.new do |xx|
@@ -74,5 +77,15 @@ class TestTextHyphen < Test::Unit::TestCase
   def test_russian
     a = Text::Hyphen.new(:language => 'ru').visualize('скоропалительный')
     assert_equal "ско-ро-па-ли-тель-ный", a
+  end
+
+  def test_hyphenate_sentence
+    a = Text::Hyphen.new(:left => 0, :right => 0).hyphenate('This useful library supports sentences.')
+    assert_equal POINTS_SENTENCE, a
+  end
+
+  def test_visualise_sentence
+    a = Text::Hyphen.new(:left => 0, :right => 0).visualize('This useful library supports sentences.')
+    assert_equal VISUAL_SENTENCE, a
   end
 end

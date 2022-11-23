@@ -8,7 +8,7 @@ end
 # a specific language's hyphenation patterns.
 class Text::Hyphen
   DEBUG   = false
-  VERSION = '1.4.1'
+  VERSION = '1.5.0'
 
   DEFAULT_MIN_LEFT  = 2
   DEFAULT_MIN_RIGHT = 2
@@ -106,6 +106,7 @@ class Text::Hyphen
   # previously, it will be returned from a per-instance cache.
   def hyphenate(word)
     word = word.downcase
+    return parse_sentence(word) if sentence?(word)
     $stderr.puts "Hyphenating #{word}" if DEBUG
     return @cache[word] if @cache.has_key?(word)
     res = @language.exceptions[word]
@@ -158,6 +159,7 @@ class Text::Hyphen
   # Because hyphenation can be expensive, if the word has been visualised
   # previously, it will be returned from a per-instance cache.
   def visualise(word, hyphen = '-')
+    return parse_sentence(word).join(' ') if sentence?(word)
     return @vcache[word] if @vcache.has_key?(word)
     w = word.dup
     s = hyphen.size
@@ -183,6 +185,7 @@ class Text::Hyphen
   #
   # +size+ characters.
   def hyphenate_to(word, size, hyphen = '-')
+    return parse_sentence(word) if sentence?(word)
     point = hyphenate(word).delete_if { |e| e >= size }.max
     if point.nil?
       [nil, word]
@@ -261,6 +264,22 @@ EOS
           "1.9"
         end
     require File.join(p, v, f)
+  end
+
+  private
+
+  def parse_sentence(input)
+    split_input = input.split(/[[:space:]]/)
+    return unless split_input.length > 1
+
+    $stderr.puts "Splitting sentence into words" if DEBUG
+    return split_input.map do |word|
+      send(caller[2][/`.*'/][1..-2], word)
+    end
+  end
+
+  def sentence?(input)
+    input.split(/[[:space:]]/).length > 1
   end
 end
 

@@ -1,3 +1,9 @@
+== 1.5.0 / 2022.11.23
+
+* Feature
+  * Anes Hodza (https://github.com/aneshodza) added support for full
+    sentences when hyphenating.
+
 == 1.4.1 / 2012.08.27
 
 * Bug Fix:
