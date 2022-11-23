@@ -60,7 +60,9 @@ debug control) and support for UTF-8 under Ruby 1.9.
 Please note, that the function only works on one word at a time. If you want
 an entire sentence hyphenated, you could do it as follows:
 
-  puts "Let me hyphenate this".split(/[[:space:]]/).map { |word| en.visualize(word) }.join(' ') #=> Let me hy–phen–ate this
+  puts "Let me hyphenate this".split(/[[:space:]]/).map do |word|
+    en.visualize(word) 
+  end.join(' ') #=> Let me hy–phen–ate this
 
 == Install
   gem install text-hyphen
