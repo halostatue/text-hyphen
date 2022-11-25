@@ -159,7 +159,7 @@ class Text::Hyphen
   # Because hyphenation can be expensive, if the word has been visualised
   # previously, it will be returned from a per-instance cache.
   def visualise(word, hyphen = '-')
-    return parse_sentence(word).join(' ') if sentence?(word)
+    return parse_sentence(word) if sentence?(word)
     return @vcache[word] if @vcache.has_key?(word)
     w = word.dup
     s = hyphen.size
@@ -273,13 +273,37 @@ EOS
     return unless split_input.length > 1
 
     $stderr.puts "Splitting sentence into words" if DEBUG
-    return split_input.map do |word|
+    result = split_input.map do |word|
       send(caller[2][/`.*'/][1..-2], word)
     end
+
+    handle_result(result, split_input)
   end
 
   def sentence?(input)
     input.split(/[[:space:]]/).length > 1
+  end
+
+  def handle_result(result, split_input)
+    def_caller = caller[1][/`.*'/][1..-2]
+
+    if def_caller == 'visualise'
+      result.join(' ')
+    else
+      parse_hyphenation(result, split_input)
+    end
+  end
+
+  def parse_hyphenation(result, split_input)
+    length_until_now = 0
+    handled_result = []
+    result.each_with_index do |word, i|
+      word.each do |letter|
+        handled_result << letter + length_until_now
+      end
+      length_until_now += split_input[i].length + 1
+    end
+    handled_result
   end
 end
 

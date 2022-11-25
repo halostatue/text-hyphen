@@ -37,8 +37,8 @@ Ruby 1.8. New features will be developed and tested against Ruby 1.9 only.
 
   # Sentences are also supported
   sentece = "This is a sentence."
-  points = hh.hyphenate(sentece)  #=> [13]
-  puts hh.visualize(sentece)      #=> This is a sen-tence.
+  points = hh.hyphenate(sentece)  #=> [8, 14, 23, 27, 32]
+  puts hh.visualize(sentece)      #=> This use-ful li-brary sup-port-s sen-tences.
 
 Both visualize and hyphenate_to methods allow choosing a custom hyphen:
 

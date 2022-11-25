@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Austin Ziegler".freeze]
-  s.date = "2022-11-23"
+  s.date = "2022-11-25"
   s.description = "Text::Hyphen is a Ruby library to hyphenate words in various languages using\nRuby-fied versions of TeX hyphenation patterns. It will properly hyphenate\nvarious words according to the rules of the language the word is written in.\nThe algorithm is based on that of the TeX typesetting system by Donald E.\nKnuth.\n\nThis is originally based on the Perl implementation of\n{TeX::Hyphen}[http://search.cpan.org/author/JANPAZ/TeX-Hyphen-0.140/lib/TeX/Hyphen.pm]\nand the {Ruby port}[http://rubyforge.org/projects/text-format]. The language\nhyphenation pattern files are based on the sources available from\n{CTAN}[http://www.ctan.org] as of 2004.12.19 and have been manually translated\nby Austin Ziegler.\n\nThis is a small feature release adding Russian language support and fixing a\nbug in the custom hyphen support introduced last version. This release provides\nboth Ruby 1.8.7 and Ruby 1.9.2 support (but please read below). In short, Ruby\n1.8 support is deprecated and I will not be providing any bug fixes related to\nRuby 1.8. New features will be developed and tested against Ruby 1.9 only.".freeze
   s.email = ["halostatue@gmail.com".freeze]
   s.executables = ["ruby-hyphen".freeze]

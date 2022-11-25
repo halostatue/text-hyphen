@@ -31,7 +31,7 @@ class TestTextHyphen < Test::Unit::TestCase
   SOFT_HYPHEN = "&shy;"
 
   VISUAL_SENTENCE = "This use-ful li-brary sup-port-s sen-tences."
-  POINTS_SENTENCE = [[], [3], [2], [3, 7], [3]]
+  POINTS_SENTENCE = [8, 14, 23, 27, 32]
 
   def test_hyphenate
     @r = []
