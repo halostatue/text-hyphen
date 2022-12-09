@@ -36,7 +36,7 @@ Ruby 1.8. New features will be developed and tested against Ruby 1.9 only.
   puts hh.visualize(word)      #=> rep-re-sen-ta-tion
 
   # Sentences are also supported
-  sentece = "This is a sentence."
+  sentece = "This useful library supports sentences."
   points = hh.hyphenate(sentece)  #=> [8, 14, 23, 27, 32]
   puts hh.visualize(sentece)      #=> This use-ful li-brary sup-port-s sen-tences.
 
