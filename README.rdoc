@@ -35,6 +35,11 @@ Ruby 1.8. New features will be developed and tested against Ruby 1.9 only.
   points = hh.hyphenate(word)  #=> [3, 5, 8, 10]
   puts hh.visualize(word)      #=> rep-re-sen-ta-tion
 
+  # Phrases are also supported
+  phrase = "This useful library supports phrases and sentences."
+  points = hh.hyphenate(phrase)  #=> [8, 14, 23, 27, 32]
+  puts hh.visualize(phrase)      #=> This use-ful li-brary sup-port-s sen-tences.
+
 Both visualize and hyphenate_to methods allow choosing a custom hyphen:
 
   puts hh.visualize(word, "&shy;") #=> rep&shy;re&shy;sen&shy;ta&shy;tion

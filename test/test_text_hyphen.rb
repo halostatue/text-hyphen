@@ -75,4 +75,14 @@ class TestTextHyphen < Test::Unit::TestCase
     a = Text::Hyphen.new(:language => 'ru').visualize('скоропалительный')
     assert_equal "ско-ро-па-ли-тель-ный", a
   end
+
+  def test_hyphenate_sentence
+    a = Text::Hyphen.new(:left => 0, :right => 0).hyphenate('This useful library supports sentences.')
+    assert_equal [8, 14, 23, 27, 32], a
+  end
+
+  def test_visualise_sentence
+    a = Text::Hyphen.new(:left => 0, :right => 0).visualize('This useful library supports sentences.')
+    assert_equal "This use-ful li-brary sup-port-s sen-tences.", a
+  end
 end
