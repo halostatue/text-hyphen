@@ -7,18 +7,6 @@ end
 # hyphenation algorithm with pattern files. Each object is constructed with
 # a specific language's hyphenation patterns.
 class Text::Hyphen
-  # Resolves a file for cleaner loading from a hyphenation loader file.
-  def self.require_real_hyphenation_file(loader) # :nodoc:
-    p = File.dirname(loader)
-    f = File.basename(loader)
-    v = if RUBY_VERSION < "1.9.1"
-      "1.8"
-    else
-      "1.9"
-    end
-    require File.join(p, v, f)
-  end
-
   VERSION = "1.5.0"
 
   DEFAULT_MIN_LEFT = 2

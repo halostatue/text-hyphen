@@ -1,9 +1,8 @@
 require "text/hyphen/language/id"
 
-unless defined? Text::Hyphen::Language::MS
-  Text::Hyphen::Language::MS = Text::Hyphen::Language.new(Text::Hyphen::Language::ID) do |malay|
-    malay.isocode = "ms"
-  end
-
-  Text::Hyphen::Language.aliases_for "MS" => %W[MAY MSA]
+Text::Hyphen::Language::MS = Text::Hyphen::Language.new(Text::Hyphen::Language::ID) do |malay|
+  malay.isocode = "ms"
 end
+
+Text::Hyphen::Language::MAY = Text::Hyphen::Language::MS
+Text::Hyphen::Language::MSA = Text::Hyphen::Language::MS

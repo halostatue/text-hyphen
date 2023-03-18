@@ -161,20 +161,4 @@ class Text::Hyphen::Language
 
     yield self if block_given?
   end
-
-  # Creates language constant aliases for the language.
-  def self.aliases_for(mapping)
-    mapping.each do |language, alias_names|
-      unless const_defined? language
-        warn "Aliases not created for #{language}; it has not been defined."
-        next
-      end
-      language = const_get(language)
-
-      [alias_names].flatten.each do |alias_name|
-        next if const_defined? alias_name
-        const_set(alias_name, language)
-      end
-    end
-  end
 end
