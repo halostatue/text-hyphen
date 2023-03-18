@@ -8,7 +8,7 @@ end
 # a specific language's hyphenation patterns.
 class Text::Hyphen
   DEBUG   = false
-  VERSION = '1.4.1'
+  VERSION = '1.5.0'
 
   DEFAULT_MIN_LEFT  = 2
   DEFAULT_MIN_RIGHT = 2
@@ -106,6 +106,7 @@ class Text::Hyphen
   # previously, it will be returned from a per-instance cache.
   def hyphenate(word)
     word = word.downcase
+    return parse_phrase(word) if phrase?(word)
     $stderr.puts "Hyphenating #{word}" if DEBUG
     return @cache[word] if @cache.has_key?(word)
     res = @language.exceptions[word]
@@ -158,6 +159,7 @@ class Text::Hyphen
   # Because hyphenation can be expensive, if the word has been visualised
   # previously, it will be returned from a per-instance cache.
   def visualise(word, hyphen = '-')
+    return parse_phrase(word) if phrase?(word)
     return @vcache[word] if @vcache.has_key?(word)
     w = word.dup
     s = hyphen.size
@@ -183,6 +185,7 @@ class Text::Hyphen
   #
   # +size+ characters.
   def hyphenate_to(word, size, hyphen = '-')
+    return parse_phrase(word) if phrase?(word)
     point = hyphenate(word).delete_if { |e| e >= size }.max
     if point.nil?
       [nil, word]
@@ -261,6 +264,46 @@ EOS
           "1.9"
         end
     require File.join(p, v, f)
+  end
+
+  private
+
+  def parse_phrase(input)
+    split_input = input.split(/[[:space:]]/)
+    return unless split_input.length > 1
+
+    $stderr.puts "Splitting phrase into words" if DEBUG
+    result = split_input.map do |word|
+      send(caller[2][/`.*'/][1..-2], word)
+    end
+
+    handle_result(result, split_input)
+  end
+
+  def phrase?(input)
+    /[^[:space:]][[:space:]][^[:space:]]/.match?(input)
+  end
+
+  def handle_result(result, split_input)
+    def_caller = caller[1][/`.*'/][1..-2]
+
+    if def_caller == 'visualise'
+      result.join(' ')
+    else
+      parse_hyphenation(result, split_input)
+    end
+  end
+
+  def parse_hyphenation(result, split_input)
+    length_until_now = 0
+    handled_result = []
+    result.each_with_index do |word, i|
+      word.each do |letter|
+        handled_result << letter + length_until_now
+      end
+      length_until_now += split_input[i].length + 1
+    end
+    handled_result
   end
 end
 
