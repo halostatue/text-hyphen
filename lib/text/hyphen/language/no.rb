@@ -1,1 +1,1 @@
-require 'text/hyphen/language/no1'
+require "text/hyphen/language/no1"

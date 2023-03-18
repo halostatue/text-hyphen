@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Hungarian
 #   Converted from the TeX hyphenation/huhyph.tex 3.12 file,
 #   by MIKL\'OS Dezs\H o and MAYER Gyula from 1989 - 1998.
@@ -30,11 +31,11 @@
 # MHSz10 p.8-9. földolgozatlan; cf. p.62.
 #++
 
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::HU1 = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
-  lang.isocode = 'hu'
+  lang.isocode = "hu"
   lang.patterns <<-PATTERNS
 % 1C(s/z/y)V   (V <> y)
 %  1C(f/h/s/z)y  occurs at the end of names, so I added some of them

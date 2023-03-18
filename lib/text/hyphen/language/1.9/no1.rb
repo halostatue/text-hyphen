@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Norsk (Norwegian)
 #   Converted from the TeX hyphenation/nohyph.tex file, by Ivvar Aavatsmark and
 #   Frank Jensen (1992 - 1995).
@@ -90,11 +91,11 @@
 #    I fremmedord tillates imidlertid deling foran r i -ere: va-ri-e-re.
 #++
 
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::NO1 = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
-  lang.isocode = 'no'
+  lang.isocode = "no"
   lang.patterns <<-PATTERNS
 .ae3 .ak3k2l .ak3k2r .an1d2ra .an3k .an1s .anti1k2l .anti1k6r .anti1k4v2
 .anti1p .be5la .be1t .bi4tr .der3i .der4iv .de2s1to .diagno5 .di4s3 .ek2s1k

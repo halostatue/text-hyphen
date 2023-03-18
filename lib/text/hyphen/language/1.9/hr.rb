@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Croatian
 #   Converted from the TeX hyphenation/bahyph.tex file, by Marinovi\'c Igor
 #   (1994 - 1996).
@@ -6,19 +7,19 @@
 # The original copyright holds and is reproduced in the source to this file.
 # The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
-# Hyphenation patterns for Croatian language words for use with 
-# T1 encoding, which is supported in DC fonts. 
+# Hyphenation patterns for Croatian language words for use with
+# T1 encoding, which is supported in DC fonts.
 # These can also be used with OT1 encoding.
 #
-# The first version was realized in late 1994. 
+# The first version was realized in late 1994.
 # Second, much more improved version was realized in the beginning of 1996.
 # Date of the last change: 19.03.1996.
 #
 #                                             Marinovi\'c Igor
 #                                           migor@student.math.hr
-# 
+#
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::HR = Text::Hyphen::Language.new do |lang|
   encoding "UTF-8"

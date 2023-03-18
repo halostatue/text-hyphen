@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: German
 #   Converted from the TeX hyphenation/dehypht.tex file, by Rechenzentrum
 #   der Ruhr-Universitaet Bochum (1988, 1991); Bernd Raichle/DANTE e.V.
@@ -75,11 +76,11 @@
 # at the end of this file.
 #++
 
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::DE2 = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
-  lang.isocode = 'de'
+  lang.isocode = "de"
   lang.patterns <<-PATTERNS
 .aa6l .ab3a4s .ab3ei .abi2 .ab3it .ab1l .ab1r .ab3u .ad3o4r .alti6 .ana3c
 .an5alg .an1e .ang8s .an1s .ap1p .ar6sc .ar6ta .ar6tei .as2z .au2f1 .au2s3
@@ -572,111 +573,111 @@ zu1s8 zu1z 2z1v zw8 z1wal 5zweck zwei3s z1wel z1wer z6werg 8z5wes 1zwi zwi1s
 ß1p8 ß5q ß1r ß1s2 ßst8 ß1ta ß1te ßt3hei ß1ti ß5to ß1tr 1ßu8 6ß5um ß1v ß1w
 ß1z
   PATTERNS
-# -----------------------------------------------------------------
-# =============== Additional Documentation ===============
-#
-# Older Versions of German Hyphenation Patterns:
-# ----------------------------------------------
-#
-# All older versions of `ghyphen.tex' distributed as
-#
-#       ghyphen.tex/germhyph.tex   as of 1986/11/01
-#       ghyphen.min/ghyphen.max    as of 1988/10/10
-#       ghyphen3.tex               as of 1990/09/27 & 1991/02/13
-#       ghyph31.tex                as of 1994/02/13
-#
-# are out of date and it is recommended to replace them
-# with the new version `dehypht.tex' as of 1999/03/03.
-#
-# If you are using `ghyphen.min' (a minor version of `ghyphen')
-# because of limited trie memory space, try this version and if
-# the space is exceeded get a newer TeX implementation with
-# larger or configurable trie memory sizes.
-#
-# Trie Memory Requirements/Space for Hyphenation Patterns:
-# --------------------------------------------------------
-# To load this set of german hyphenation patterns the parameters
-# of TeX has to have at least these values:
-#
-# TeX 3.x:
-#    IniTeX:    trie_size >= 9733    trie_op_size >= 207
-#    VirTeX:    trie_size >= 8375    trie_op_size >= 207
-#
-# TeX 2.x:
-#    IniTeX:    trie_size >= 8675    trie_op_size >= 198
-#    VirTeX:    trie_size >= 7560    trie_op_size >= 198
-#
-# If you want to load more than one set of hyphenation patterns
-# (in TeX 3.x), the parameters have to be set to a value larger
-# than or equal to the sum of all required values for each set.
-#
-#
-# Setting Trie Memory Parameters:
-# -------------------------------
-#
-# Some implementations allow the user to change the default value
-# of a set of the internal TeX parameters including the trie memory
-# size parameter specifying the used memory for the hyphenation
-# patterns.
-#
-# Web2c 7.x (Source), teTeX 0.9 (Unix, Amiga), fpTeX (Win32)
-# and newer:
-#   The used memory size of the true is usually set high enough.
-#   If needed set the size of the trie using the keyword `trie_size'
-#   in the configuration file `texmf/web2c/texmf.cnf'.  For details
-#   see the included documentation.
-#
-# emTeX (OS/2, MS-DOS, Windows 3.x/9x/NT):
-#   You can set the used memory size of the trie using the
-#   `-mt<number>' option on the command line or in the
-#   TEXOPTIONS environment variable.
-#
-# PasTeX (Amiga):
-#   The values for the parameters can be set using the keywords
-#   `triesize', `itriesize' and `trieopsize' in the configuration
-#   file.
-#
-# others (binaries only):
-#   See the documentation of the implementation if it is possible
-#   and how to change these values without recompilation.
-#
-# others (with sources)
-#   If the trie memory is too small, you have to recompile TeX
-#   using larger values for `trie_size' and `trie_op_size'.
-#   Modify the change file `tex.ch' and recompile TeX.
-#   For details see the documentation included in the sources.
-#
-# Necessary Settings in TeX macro files:
-# --------------------------------------
-#
-# \lefthyphenmin, \righthyphenmin:
-#   You can set both parameters to 2.
-#
-# \lccode <char>:
-#   To get correct hyphenation points within words containing
-#   umlauts or \ss, it's necessary to assign values > 0 to the
-#   appropriate \lccode <char> positions.
-#
-# These changes are _not_ done when reading this file and have to
-# be included in the language switching mechanism as is done in,
-# for example, `german.sty' (\lccode change for ^^Y = \ss in OT1,
-# \left-/\righthyphenmin settings).
-#
-## \CharacterTable
-##  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-##   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-##   Digits        \0\1\2\3\4\5\6\7\8\9
-##   Exclamation   \!     Double quote  \"     Hash (number) \#
-##   Dollar        \$     Percent       \%     Ampersand     \&
-##   Acute accent  \'     Left paren    \(     Right paren   \)
-##   Asterisk      \*     Plus          \+     Comma         \,
-##   Minus         \-     Point         \.     Solidus       \/
-##   Colon         \:     Semicolon     \;     Less than     \<
-##   Equals        \=     Greater than  \>     Question mark \?
-##   Commercial at \@     Left bracket  \[     Backslash     \\
-##   Right bracket \]     Circumflex    \^     Underscore    \_
-##   Grave accent  \`     Left brace    \{     Vertical bar  \|
-##   Right brace   \}     Tilde         \~}
-##
-## End of file `dehypht.tex'.
+  # -----------------------------------------------------------------
+  # =============== Additional Documentation ===============
+  #
+  # Older Versions of German Hyphenation Patterns:
+  # ----------------------------------------------
+  #
+  # All older versions of `ghyphen.tex' distributed as
+  #
+  #       ghyphen.tex/germhyph.tex   as of 1986/11/01
+  #       ghyphen.min/ghyphen.max    as of 1988/10/10
+  #       ghyphen3.tex               as of 1990/09/27 & 1991/02/13
+  #       ghyph31.tex                as of 1994/02/13
+  #
+  # are out of date and it is recommended to replace them
+  # with the new version `dehypht.tex' as of 1999/03/03.
+  #
+  # If you are using `ghyphen.min' (a minor version of `ghyphen')
+  # because of limited trie memory space, try this version and if
+  # the space is exceeded get a newer TeX implementation with
+  # larger or configurable trie memory sizes.
+  #
+  # Trie Memory Requirements/Space for Hyphenation Patterns:
+  # --------------------------------------------------------
+  # To load this set of german hyphenation patterns the parameters
+  # of TeX has to have at least these values:
+  #
+  # TeX 3.x:
+  #    IniTeX:    trie_size >= 9733    trie_op_size >= 207
+  #    VirTeX:    trie_size >= 8375    trie_op_size >= 207
+  #
+  # TeX 2.x:
+  #    IniTeX:    trie_size >= 8675    trie_op_size >= 198
+  #    VirTeX:    trie_size >= 7560    trie_op_size >= 198
+  #
+  # If you want to load more than one set of hyphenation patterns
+  # (in TeX 3.x), the parameters have to be set to a value larger
+  # than or equal to the sum of all required values for each set.
+  #
+  #
+  # Setting Trie Memory Parameters:
+  # -------------------------------
+  #
+  # Some implementations allow the user to change the default value
+  # of a set of the internal TeX parameters including the trie memory
+  # size parameter specifying the used memory for the hyphenation
+  # patterns.
+  #
+  # Web2c 7.x (Source), teTeX 0.9 (Unix, Amiga), fpTeX (Win32)
+  # and newer:
+  #   The used memory size of the true is usually set high enough.
+  #   If needed set the size of the trie using the keyword `trie_size'
+  #   in the configuration file `texmf/web2c/texmf.cnf'.  For details
+  #   see the included documentation.
+  #
+  # emTeX (OS/2, MS-DOS, Windows 3.x/9x/NT):
+  #   You can set the used memory size of the trie using the
+  #   `-mt<number>' option on the command line or in the
+  #   TEXOPTIONS environment variable.
+  #
+  # PasTeX (Amiga):
+  #   The values for the parameters can be set using the keywords
+  #   `triesize', `itriesize' and `trieopsize' in the configuration
+  #   file.
+  #
+  # others (binaries only):
+  #   See the documentation of the implementation if it is possible
+  #   and how to change these values without recompilation.
+  #
+  # others (with sources)
+  #   If the trie memory is too small, you have to recompile TeX
+  #   using larger values for `trie_size' and `trie_op_size'.
+  #   Modify the change file `tex.ch' and recompile TeX.
+  #   For details see the documentation included in the sources.
+  #
+  # Necessary Settings in TeX macro files:
+  # --------------------------------------
+  #
+  # \lefthyphenmin, \righthyphenmin:
+  #   You can set both parameters to 2.
+  #
+  # \lccode <char>:
+  #   To get correct hyphenation points within words containing
+  #   umlauts or \ss, it's necessary to assign values > 0 to the
+  #   appropriate \lccode <char> positions.
+  #
+  # These changes are _not_ done when reading this file and have to
+  # be included in the language switching mechanism as is done in,
+  # for example, `german.sty' (\lccode change for ^^Y = \ss in OT1,
+  # \left-/\righthyphenmin settings).
+  #
+  ## \CharacterTable
+  ##  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+  ##   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+  ##   Digits        \0\1\2\3\4\5\6\7\8\9
+  ##   Exclamation   \!     Double quote  \"     Hash (number) \#
+  ##   Dollar        \$     Percent       \%     Ampersand     \&
+  ##   Acute accent  \'     Left paren    \(     Right paren   \)
+  ##   Asterisk      \*     Plus          \+     Comma         \,
+  ##   Minus         \-     Point         \.     Solidus       \/
+  ##   Colon         \:     Semicolon     \;     Less than     \<
+  ##   Equals        \=     Greater than  \>     Question mark \?
+  ##   Commercial at \@     Left bracket  \[     Backslash     \\
+  ##   Right bracket \]     Circumflex    \^     Underscore    \_
+  ##   Grave accent  \`     Left brace    \{     Vertical bar  \|
+  ##   Right brace   \}     Tilde         \~}
+  ##
+  ## End of file `dehypht.tex'.
 end

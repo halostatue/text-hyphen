@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Latin
 #   Converted from the TeX hyphenation/lahyph.tex file, by Claudio Beccari
 #   (1999 - 2001).
@@ -44,9 +45,9 @@
 #
 # Information after \endinput.
 #
-#message{Latin Hyphenation Patterns `lahyph' Version 3.0b <2001/11/21>}
+# message{Latin Hyphenation Patterns `lahyph' Version 3.0b <2001/11/21>}
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::LA = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
@@ -81,54 +82,54 @@ o2r1ue o2r1ui o2r1uo o2r1uu u2r1ua u2r1ue u2r1ui u2r1uo u2r1uu
   PATTERNS
 end
 
-  # For documentation see:
-  #
-  # C. Beccari, "Computer aided hyphenation for Italian and Modern Latin",
-  #             TUG vol. 13, n. 1, pp. 23-33 (1992)
-  #
-  # see also
-  #
-  # C. Beccari, "Typesetting of ancient languages",
-  #             TUG vol.15, n.1, pp. 9-16 (1994)
-  #
-  # In the former paper  the  code  was  described  as  being contained in file
-  # ITALAT.TEX; this is substantially the same code,  but  the  file  has  been
-  # renamed  LAHYPH.TEX  in  accordance  with  the  ISO  name for Latin and the
-  # convention that all hyphenation pattern file  names should be formed by the
-  # agglutination of two letter language ISO code and the abbreviation HYPH.
-  #
-  # A corresponding file (ITHYPH.TEX) has been extracted in order to  eliminate
-  # the  (few)  patterns specific to Latin and leave those specific to Italian;
-  # ITHYPH.TEX has been further  extended  with  many  new patterns in order to
-  # cope with the many neologisms and technical terms with foreign roots.
-  #
-  # Should you find any word that gets hyphenated in a wrong way, please, AFTER
-  # CHECKING  ON A RELIABLE MODERN DICTIONARY, report to the author, preferably
-  # by e-mail.  Please  do  not  report  about  wrong  break  points concerning
-  # prefixes and/or suffixes; see at the bottom of this file.
-  #
-  # Compared with the previous versions, this file has been extended so  as  to
-  # cope also with the medieval Latin spelling, where the letter `V' played the
-  # roles of both `U' and `V', as in the Roman times, save that the Romans used
-  # only capitals. In the middle ages the availability of soft writing supports
-  # and the necessity of copying books with a reasonable speed, several scripts
-  # evolved  in  (practically)  all  of  which  there was a lower case alphabet
-  # different from the upper case  one,  and  where  the lower case `v' had the
-  # rounded shape of our modern lower case `u', and where the Latin  diphthongs
-  # `AE'  and  `OE',  both in upper and lower case, where written as ligatures,
-  # not to mention the habit of  substituting  them with their sound, that is a
-  # simple `E'.
-  #
-  # According  to  Leon  Battista  Alberti,  who  in  1466  wrote  a  book   on
-  # cryptography  where  he  thoroughly  analyzed  the hyphenation of the Latin
-  # language of his (still  medieval)  times,  the  differences from the Tuscan
-  # language (the Italian language, as it was named  at  his  time)  were  very
-  # limited,  in particular for what concerns the handling of the ascending and
-  # descending diphthongs; in  central  and  northern  Europe,  and later on in
-  # North America, the Scholars perceived the above diphthongs as made  of  two
-  # distinct  vowels;  the  hyphenation of medieval Latin, therefore, was quite
-  # different in the northern countries compared to the southern ones, at least
-  # for what concerns these  diphthongs.  If  you need hyphenation patterns for
-  # medieval Latin that suite you better according to the  habits  of  northern
-  # Europe  you  should  resort  to the hyphenation patterns prepared by Yannis
-  # Haralambous (TUGboat, vol.13 n.4 (1992)).
+# For documentation see:
+#
+# C. Beccari, "Computer aided hyphenation for Italian and Modern Latin",
+#             TUG vol. 13, n. 1, pp. 23-33 (1992)
+#
+# see also
+#
+# C. Beccari, "Typesetting of ancient languages",
+#             TUG vol.15, n.1, pp. 9-16 (1994)
+#
+# In the former paper  the  code  was  described  as  being contained in file
+# ITALAT.TEX; this is substantially the same code,  but  the  file  has  been
+# renamed  LAHYPH.TEX  in  accordance  with  the  ISO  name for Latin and the
+# convention that all hyphenation pattern file  names should be formed by the
+# agglutination of two letter language ISO code and the abbreviation HYPH.
+#
+# A corresponding file (ITHYPH.TEX) has been extracted in order to  eliminate
+# the  (few)  patterns specific to Latin and leave those specific to Italian;
+# ITHYPH.TEX has been further  extended  with  many  new patterns in order to
+# cope with the many neologisms and technical terms with foreign roots.
+#
+# Should you find any word that gets hyphenated in a wrong way, please, AFTER
+# CHECKING  ON A RELIABLE MODERN DICTIONARY, report to the author, preferably
+# by e-mail.  Please  do  not  report  about  wrong  break  points concerning
+# prefixes and/or suffixes; see at the bottom of this file.
+#
+# Compared with the previous versions, this file has been extended so  as  to
+# cope also with the medieval Latin spelling, where the letter `V' played the
+# roles of both `U' and `V', as in the Roman times, save that the Romans used
+# only capitals. In the middle ages the availability of soft writing supports
+# and the necessity of copying books with a reasonable speed, several scripts
+# evolved  in  (practically)  all  of  which  there was a lower case alphabet
+# different from the upper case  one,  and  where  the lower case `v' had the
+# rounded shape of our modern lower case `u', and where the Latin  diphthongs
+# `AE'  and  `OE',  both in upper and lower case, where written as ligatures,
+# not to mention the habit of  substituting  them with their sound, that is a
+# simple `E'.
+#
+# According  to  Leon  Battista  Alberti,  who  in  1466  wrote  a  book   on
+# cryptography  where  he  thoroughly  analyzed  the hyphenation of the Latin
+# language of his (still  medieval)  times,  the  differences from the Tuscan
+# language (the Italian language, as it was named  at  his  time)  were  very
+# limited,  in particular for what concerns the handling of the ascending and
+# descending diphthongs; in  central  and  northern  Europe,  and later on in
+# North America, the Scholars perceived the above diphthongs as made  of  two
+# distinct  vowels;  the  hyphenation of medieval Latin, therefore, was quite
+# different in the northern countries compared to the southern ones, at least
+# for what concerns these  diphthongs.  If  you need hyphenation patterns for
+# medieval Latin that suite you better according to the  habits  of  northern
+# Europe  you  should  resort  to the hyphenation patterns prepared by Yannis
+# Haralambous (TUGboat, vol.13 n.4 (1992)).

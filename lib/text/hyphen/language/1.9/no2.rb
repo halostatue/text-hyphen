@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Norway
 #   Converted from the TeX hyphenation/nohyph.tex file, by L. Thoresen and
 #   D.F. Langmyhr (1994).
@@ -13,11 +14,11 @@
 # University of Oslo.
 #++
 
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::NO2 = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
-  lang.isocode = 'no'
+  lang.isocode = "no"
   lang.patterns <<-PATTERNS
 .a4 .an6e .ann6 .an3s .ar6n .ask6 .att6 .av7s .b4 .bund6 .d2 .de6r5 .di6ri
 .e2 .e6d .eft2 .ei6e .ell6 .el6se. .ent6e .erk5l .es6k .ett6 .eu3 .ev6e .f6e

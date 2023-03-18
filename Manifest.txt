@@ -1,11 +1,10 @@
-.autotest
-.gemtest
-.hoerc
-Gemfile
-History.rdoc
-License.rdoc
+.standard.yml
+Code-of-Conduct.md
+Contributing.md
+History.md
+Licence.md
 Manifest.txt
-README.rdoc
+README.md
 Rakefile
 bin/ruby-hyphen
 lib/text-hyphen.rb
@@ -33,6 +32,7 @@ lib/text/hyphen/language/1.8/id.rb
 lib/text/hyphen/language/1.8/is.rb
 lib/text/hyphen/language/1.8/it.rb
 lib/text/hyphen/language/1.8/la.rb
+lib/text/hyphen/language/1.8/lt.rb
 lib/text/hyphen/language/1.8/mn.rb
 lib/text/hyphen/language/1.8/nl.rb
 lib/text/hyphen/language/1.8/no1.rb
@@ -40,6 +40,7 @@ lib/text/hyphen/language/1.8/no2.rb
 lib/text/hyphen/language/1.8/pl.rb
 lib/text/hyphen/language/1.8/pt.rb
 lib/text/hyphen/language/1.8/ru.rb
+lib/text/hyphen/language/1.8/sk.rb
 lib/text/hyphen/language/1.8/sv.rb
 lib/text/hyphen/language/1.9/ca.rb
 lib/text/hyphen/language/1.9/cs.rb
@@ -63,6 +64,7 @@ lib/text/hyphen/language/1.9/id.rb
 lib/text/hyphen/language/1.9/is.rb
 lib/text/hyphen/language/1.9/it.rb
 lib/text/hyphen/language/1.9/la.rb
+lib/text/hyphen/language/1.9/lt.rb
 lib/text/hyphen/language/1.9/mn.rb
 lib/text/hyphen/language/1.9/nl.rb
 lib/text/hyphen/language/1.9/no1.rb
@@ -70,6 +72,7 @@ lib/text/hyphen/language/1.9/no2.rb
 lib/text/hyphen/language/1.9/pl.rb
 lib/text/hyphen/language/1.9/pt.rb
 lib/text/hyphen/language/1.9/ru.rb
+lib/text/hyphen/language/1.9/sk.rb
 lib/text/hyphen/language/1.9/sv.rb
 lib/text/hyphen/language/ca.rb
 lib/text/hyphen/language/cs.rb
@@ -95,6 +98,7 @@ lib/text/hyphen/language/id.rb
 lib/text/hyphen/language/is.rb
 lib/text/hyphen/language/it.rb
 lib/text/hyphen/language/la.rb
+lib/text/hyphen/language/lt.rb
 lib/text/hyphen/language/mn.rb
 lib/text/hyphen/language/ms.rb
 lib/text/hyphen/language/nl.rb
@@ -104,6 +108,7 @@ lib/text/hyphen/language/no2.rb
 lib/text/hyphen/language/pl.rb
 lib/text/hyphen/language/pt.rb
 lib/text/hyphen/language/ru.rb
+lib/text/hyphen/language/sk.rb
 lib/text/hyphen/language/sv.rb
 test/data/bug_9807_latin1.rb
 test/data/bug_9807_utf-8.rb

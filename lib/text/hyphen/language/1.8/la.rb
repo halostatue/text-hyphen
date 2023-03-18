@@ -1,3 +1,4 @@
+# -*- encoding: iso-8859-1 -*-
 # Hyphenation patterns for Text::Hyphen in Ruby: Latin
 #   Converted from the TeX hyphenation/lahyph.tex file, by Claudio Beccari
 #   (1999 - 2001).

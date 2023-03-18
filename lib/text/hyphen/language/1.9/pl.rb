@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Polish
 #   Converted from the TeX hyphenation/plhyph.tex file, by Hanna
 #   Kołodziejska, Bogusław Jackowski, Marek Ryćko, and others (1987 -
@@ -62,7 +63,7 @@
 # a respective MeX macro. This is possible because the settings of both
 # \hyphen and \pattern commands are always GLOBAL.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::PL = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

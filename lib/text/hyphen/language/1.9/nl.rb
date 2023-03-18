@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Dutch (Nederlande)
 #   Converted from the TeX hyphenation/bahyph.tex file, by Piet Tutelaers
 #   (1996).
@@ -44,7 +45,7 @@
 #
 # AUTHOR:  Piet Tutelaers P.T.H.Tutelaers@tue.nl
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::NL = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

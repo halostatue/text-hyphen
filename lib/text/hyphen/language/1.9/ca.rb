@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Catalan
 #   Converted from the TeX hyphenation/cahyph.tex file version 1.11, by
 #   Gonçal Badenes and Francina Turon, copyright 1991 - 2003.
@@ -66,7 +67,7 @@
 #
 # Please report any problem you might have to the authors!!!
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::CA = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

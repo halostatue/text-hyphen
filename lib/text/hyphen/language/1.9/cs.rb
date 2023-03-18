@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Czech
 #   Lala 8.11.1991
 #
@@ -7,7 +8,7 @@
 #--
 # Czech hyphenation patterns - Lala 8.11.1991
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::CS = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

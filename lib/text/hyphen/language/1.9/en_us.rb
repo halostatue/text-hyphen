@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: US English
 #   Converted from the TeX hyphenation/bahyph.tex file, by Donald E. Knuth
 #   with additions by Gerard D.C. Kuiken.
@@ -22,7 +23,7 @@
 #   % Postal address: P.O. Box 65791, NL 2506 EB Den Haag, Holland.
 #   % Patterns of March 1, 1990.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::EN_US = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

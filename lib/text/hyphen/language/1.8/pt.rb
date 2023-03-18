@@ -1,3 +1,4 @@
+# -*- encoding: iso-8859-1 -*-
 # Hyphenation patterns for Text::Hyphen in Ruby: Portuguese
 #   Converted from the TeX hyphenation/pthyphen.tex file, by Pedro J. de
 #   Rezende, copyright 1987.
@@ -21,7 +22,7 @@
 #
 # Permission is hereby granted to copy and distribute this material provided
 # that the copies are not made or  distributed for  commercial or  lucrative
-# purpose. 
+# purpose.
 #
 # FURTHERMORE, THE CONTENTS OF THIS TABLE ARE NOT TO BE CHANGED IN ANY WAY!
 #

@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Basque
 #   Converted from the TeX hyphenation/bahyph.tex file, by Juan M.
 #   Aguirregabiria (wtpagagj@lg.ehu.es) in 1997 based on work by Julio
@@ -50,8 +51,8 @@
 # this software nor for any damages derived from its use, even in case any
 # of the above has been notified of the possibility of such damages. If any
 # such situation arises, you responsible for repair. Use of this software is
-# an explicit acceptance of these conditions. 
-# 
+# an explicit acceptance of these conditions.
+#
 # You can use this software for any purpose. You cannot delete this
 # copyright notice. If you change this software, you must include comments
 # explaining who, when and why. You are kindly requested to send any changes
@@ -79,7 +80,7 @@
 # be established as the current language. See the babel docs if you don't
 # understand this.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::EU = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

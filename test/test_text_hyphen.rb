@@ -1,11 +1,12 @@
 # coding: utf-8
-require 'test/unit'
-require 'text-hyphen'
+
+require "test/unit"
+require "text-hyphen"
 
 class TestTextHyphen < Test::Unit::TestCase
-  WORDS   = %w(additional declination going leaving maximizes multiple peter
-               playback presents programmable representation)
-  POINTS  = [
+  WORDS = %w[additional declination going leaving maximizes multiple peter
+    playback presents programmable representation]
+  POINTS = [
     [2, 4, 8],     # additional
     [3, 5, 7],     # declination
     [2],           # going
@@ -19,22 +20,22 @@ class TestTextHyphen < Test::Unit::TestCase
     [3, 5, 8, 10]  # representation
   ]
 
-  VISUAL = %w(ad-di-tion-al dec-li-na-tion go-ing leav-ing max-i-mizes
-              mul-ti-ple pe-ter play-back presents pro-gram-ma-ble
-              rep-re-sen-ta-tion)
+  VISUAL = %w[ad-di-tion-al dec-li-na-tion go-ing leav-ing max-i-mizes
+    mul-ti-ple pe-ter play-back presents pro-gram-ma-ble
+    rep-re-sen-ta-tion]
 
-  HY_TO   = [ %w(addi- tional), %w(dec- lination), %w(go- ing),
-              %w(leav- ing), %w(maxi- mizes), %w(mul- tiple), %w(pe- ter),
-              %w(play- back), [nil, 'presents'], %w(pro- grammable),
-              %w(rep- resentation)]
+  HY_TO = [%w[addi- tional], %w[dec- lination], %w[go- ing],
+    %w[leav- ing], %w[maxi- mizes], %w[mul- tiple], %w[pe- ter],
+    %w[play- back], [nil, "presents"], %w[pro- grammable],
+    %w[rep- resentation]]
 
   SOFT_HYPHEN = "&shy;"
 
   def test_hyphenate
     @r = []
     a = Text::Hyphen.new do |xx|
-      xx.left   = 0
-      xx.right  = 0
+      xx.left = 0
+      xx.right = 0
     end
     assert_nothing_raised { WORDS.each { |w| @r << a.hyphenate(w) } }
     assert_equal(POINTS, @r)
@@ -58,21 +59,20 @@ class TestTextHyphen < Test::Unit::TestCase
   end
 
   def test_alt_hyphen_for_visualize
-    a = Text::Hyphen.new.visualize('backpack', SOFT_HYPHEN)
+    a = Text::Hyphen.new.visualize("backpack", SOFT_HYPHEN)
     assert_equal "back#{SOFT_HYPHEN}pack", a
 
-    a = Text::Hyphen.new.visualize('representation', SOFT_HYPHEN)
+    a = Text::Hyphen.new.visualize("representation", SOFT_HYPHEN)
     assert_equal "rep#{SOFT_HYPHEN}re#{SOFT_HYPHEN}sen#{SOFT_HYPHEN}ta#{SOFT_HYPHEN}tion", a
   end
 
   def test_alt_hyphen_for_hyphenate_to
-    a = Text::Hyphen.new.hyphenate_to('backpack', 5, SOFT_HYPHEN)
-    assert_equal ["back#{SOFT_HYPHEN}", 'pack'], a
-
+    a = Text::Hyphen.new.hyphenate_to("backpack", 5, SOFT_HYPHEN)
+    assert_equal ["back#{SOFT_HYPHEN}", "pack"], a
   end
 
   def test_russian
-    a = Text::Hyphen.new(:language => 'ru').visualize('скоропалительный')
+    a = Text::Hyphen.new(:language => "ru").visualize("скоропалительный")
     assert_equal "ско-ро-па-ли-тель-ный", a
   end
 

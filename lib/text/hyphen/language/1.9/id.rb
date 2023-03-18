@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby
 #   id (Indonesian) and ms (Malay)
 #   Converted from the TeX hyphenation/inhyph.tex file, by Jörg Knappen and
@@ -7,19 +8,19 @@
 # The original copyright holds and is reproduced in the source to this file.
 # The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
-# inhyph.tex 
+# inhyph.tex
 # Version 1.3 19-SEP-1997
 #
 # Hyphenation patterns for bahasa indonesia (probably also usable
 # for bahasa melayu)
 #
 # (c) Copyright 1996, 1997 Jörg Knappen and Terry Mart
-# 
-# This patterns are free software according to the GNU General Public 
+#
+# This patterns are free software according to the GNU General Public
 # licence version 2, June 1991.
 #
 # Please read the GNU licence for details. If you don't receive a GNU
-# licence with these patterns, you can obtain it from 
+# licence with these patterns, you can obtain it from
 #
 #                          Free Software Foundation, Inc.
 #                          675 Mass Ave, Cambridge, MA 02139, USA
@@ -50,7 +51,7 @@
 # email : mart@kph.uni-mainz.de
 #
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::ID = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
@@ -78,8 +79,8 @@ a2ir % ber-air
 % Don't overload the exception list...
   PATTERNS
 
-    # Exeptions to the above rules, specially words beginning in ber... and
-    # ter..
+  # Exeptions to the above rules, specially words beginning in ber... and
+  # ter..
   lang.exceptions <<-EXCEPTIONS
 be-ra-be be-ra-hi be-rak be-ran-da be-ran-dal be-rang be-ra-ngas-an
 be-rang-sang be-ra-ngus be-ra-ni be-ran-tak-an be-ran-tam be-ran-tas

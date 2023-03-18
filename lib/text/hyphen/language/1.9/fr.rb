@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: French
 #   Converted from the TeX hyphenation/frhyph.tex file, by Jacques
 #   Desarmenien (1984 - 1986), Norman Buckle, Michael Ferguson (1988),
@@ -8,22 +9,22 @@
 # The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # frhyph.tex % French hyphenation patterns
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # This file is available for free and can used and redistributed
 # asis for free. Modified versions should have another name.
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#message{frhyph.tex - French hyphenation patterns (V2.11) <2002/01/16>}
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# message{frhyph.tex - French hyphenation patterns (V2.11) <2002/01/16>}
 #
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #          *BEFORE* using this file *PLEASE* run checksum on it:
 #                       checksum -v frhyph.tex
 # to make sure that it hasn't been damaged.
 # Then if you notice anything wrong in french hyphenation please report to
 # D. Flipo and B. Gaulle at the email address: cesure-l@gutenberg.eu.org
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#%      checksum        = "37094 1457 3075 34744"
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#%%%%%%% The most famous good guys who worked hard to obtain something usable. 
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %      checksum        = "37094 1457 3075 34744"
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%% The most famous good guys who worked hard to obtain something usable.
 # Jacques Desarmenien, Universite de Strasbourg :
 #          -  << how to run TeX in a French environment: hyphenation, fonts,
 #             typography. >> in Tugboat, 5 (1984) 91-102. and TeX85 conference
@@ -48,7 +49,7 @@
 # (An adaption for the old MLTeX 2.x exists but can not be
 # tested in lack of an executable.)
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::FR = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

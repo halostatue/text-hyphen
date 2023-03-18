@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Estonian
 #   Converted from the TeX hyphenation/eehyph.tex file, by E. Saar (2003).
 #
@@ -13,16 +14,16 @@
 # license or (at your option) any later version. The latest version
 # of this license is in http://www.latex-project.org/lppl.txt and
 # version 1.3 or later is part of all distributions of LaTeX
-# version 2003/12/01 or later. 
-# 
+# version 2003/12/01 or later.
+#
 # This work has the LPPL maintenance status "author-maintained".
 # This work consists of this file only (eehyph.tex).
 #
 # The patterns were generated long ago by applying patgen to
-# an Estonian dictionary; a few patterns were added later manually 
-# to prohibit aa-bits type cases. 
+# an Estonian dictionary; a few patterns were added later manually
+# to prohibit aa-bits type cases.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::ET = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
