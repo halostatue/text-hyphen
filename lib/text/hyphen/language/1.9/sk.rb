@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Slovak
 #   Converted from the TeX hyphenation/hyph-sk.tex file, by Palo Sopko
 #   <pavol.sopko@backbone.sk>.
@@ -26,11 +27,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 #++
 
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::SK = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
-  lang.isocode 'sk'
+  lang.isocode "sk"
   lang.patterns <<-PATTERNS
 a1 á1 ä1 e1 é1 i1 í1 o1 ó1 ô1 u1 ú1 y1 ý1 i2a i2á i2e i2u o2u c2h d2z d2ž 2b1b
 2b1c 2b1č 2b1d 2b1ď 2b1f 2b1g 2b1h 2b1c2h 2b1j 2b1k 2b1l 2b1ľ 2b1m 2b1n 2b1ň

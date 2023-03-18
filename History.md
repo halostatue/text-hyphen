@@ -16,6 +16,10 @@
 
   - Markus (@doits) updated German, English (US), and French hyphenations in 2016.
 
+- minor updates:
+
+  - Removed unused private methods
+
 - Governance changes:
 
   - Added Contributor Covenant 1.4.
