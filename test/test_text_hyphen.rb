@@ -77,12 +77,12 @@ class TestTextHyphen < Test::Unit::TestCase
   end
 
   def test_hyphenate_sentence
-    a = Text::Hyphen.new(:left => 0, :right => 0).hyphenate('This useful library supports sentences.')
-    assert_equal [8, 14, 23, 27, 32], a
+    a = Text::Hyphen.new(:left => 0, :right => 0).hyphenate("This useful library supports phrases and sentences.")
+    assert_equal [8, 14, 23, 27, 34, 44], a
   end
 
   def test_visualise_sentence
-    a = Text::Hyphen.new(:left => 0, :right => 0).visualize('This useful library supports sentences.')
-    assert_equal "This use-ful li-brary sup-port-s sen-tences.", a
+    a = Text::Hyphen.new(:left => 0, :right => 0).visualize("This useful library supports phrases and sentences.")
+    assert_equal "This use-ful li-brary sup-port-s phras-es and sen-tences.", a
   end
 end

@@ -1,9 +1,10 @@
 # -*- encoding: utf-8 -*-
+
 # Origin: TeX hyphenation tables by Sigitas Tolusis and Vytas
 #         Statulevicius.  The original tables can be found at
 #         http://www.vtex.lt/tex/download/zip/texmf.zip as lthyphen.tex.#
 # WARNING: This file is UTF-8 encoded.
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::LT = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

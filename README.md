@@ -35,9 +35,9 @@ points = hh.hyphenate(word) #=> [3, 5, 8, 10]
 puts hh.visualize(word) #=> rep-re-sen-ta-tion
 
 # Phrases are also supported
-phrase = "This useful library supports phrases and sentences."
-points = hh.hyphenate(phrase)  #=> [8, 14, 23, 27, 32]
-puts hh.visualize(phrase)      #=> This use-ful li-brary sup-port-s sen-tences.
+phrase = "This useful library supports sentences."
+points = hh.hyphenate(phrase)  #=> [8, 14, 23, 27, 34, 44]
+puts hh.visualize(phrase)      #=> This use-ful li-brary sup-port-s phras-es and sen-tences.
 ```
 
 Both visualize and hyphenate_to methods allow choosing a custom hyphen:
