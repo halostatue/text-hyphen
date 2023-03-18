@@ -4,7 +4,7 @@
 # The original copyright holds and is reproduced in the source to this file.
 # The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
-#%%%%%%%%%%%%%%%%%%%%%%%%%%  file ithyph.tex  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%  file ithyph.tex  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #
 # Prepared by Claudio Beccari   e-mail  claudio.beccari@polito.it
 #
@@ -30,7 +30,7 @@
 #
 # See comments at the end of the file after the \endinput line
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::IT = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
@@ -60,75 +60,75 @@ t2t3s 2tv 2tw t2z 2tzk tz2s 2t. 2t'. 2t'' 1v 2vc v2l v2r 2vv 2v. 2v'. 2v''
   PATTERNS
 end
 
-  # Information
-  #                           ON ITALIAN HYPHENATION
-  #
-  # I have been working on patterns for the Italian language since 1987; in
-  # 1992 I published
-  #
-  #   C. Beccari, "Computer aided hyphenation for Italian and Modern Latin",
-  #               TUG vol. 13, n. 1, pp. 23-33 (1992)
-  #
-  # which contained a set of patterns that allowed hyphenation for both
-  # Italian and Latin; a slightly modified version of the patterns published
-  # in the above paper is contained in LAHYPH.TEX available on the CTAN
-  # archives.
-  #
-  # This minor revision has been tested with an enlarged set of difficult
-  # Italian words so as to comply with a larger number of technical words
-  # with foreign roots. The overall number of patterns is slightly reduced,
-  # but its strength is increased. As with the previous release hyathi are
-  # not hyphenated in order to cope with the habits of Italian readers.
-  # Similarly single vowel internal syllables are avoided.
-  #
-  # As the previous versions, this new set of patterns does not contain any
-  # accented character so that the hyphenation algorithm behaves properly in
-  # both cases, that is with OT1 and T1 encodings. With the former encoding
-  # fonts do not contain accented characters, while with the latter accented
-  # characters are present and sequences such as à map directly to slot "E0
-  # that contains "agrave".
-  #
-  # Of course if you use T1 encoded fonts you get the full power of the
-  # hyphenation algorithm, while if you use OT1 encoded fonts you miss some
-  # possible break points; this is not a big inconvenience in Italian
-  # because:
-  #
-  # 1) The Regulation UNI 6015 on accents specifies that compulsory accents
-  #    appear only on the ending vowel of oxitone words; this means that it
-  #    is almost indifferent to have or to miss the T1 encoded fonts because
-  #    the only difference consists in how TeX evaluates the end of the
-  #    word; in practice if you have these special facilities you get
-  #    "qua-li-tà", while if you miss them, you get "qua-lità" (assuming
-  #    that \righthyphenmin > 1).
-  #
-  # 2) Optional accents are so rare in Italian, that if you absolutely want
-  #    to use them in those rare instances, and you miss the T1 encoding
-  #    facilities, you should also provide explicit discretionary hyphens as
-  #    in "sé\-gui\-to".
-  #
-  # There is no explicit hyphenation exception list because these patterns
-  # proved to hyphenate correctly a very large set of words suitably chosen
-  # in order to test them in the most heavy circumstances; these patterns
-  # were used in the preparation of a number of books and no errors were
-  # discovered.
-  #
-  # Nevertheless if you frequently use technical terms that you want
-  # hyphenated differently from what is normally done (for example if you
-  # prefer etymological hyphenation of prefixed and/or suffixed words) you
-  # should insert a specific hyphenation list in the preamble of your
-  # document, for example:
-  #
-  # \hyphenation{su-per-in-dut-to-re su-per-in-dut-to-ri}
-  #
-  # If you use, as you should, the italan option of the babel package, then
-  # you have available the active charater " that allows you to put
-  # a discretionary break at a word boundary of a compound word while
-  # maintaning the hyphenation algorithm on the rest of the word.
-  #
-  # Please, read the babel package documentation.
-  #
-  # Should you find any word that gets hyphenated in a wrong way, please,
-  # AFTER CHECKING ON A RELIABLE MODERN DICTIONARY, report to the author,
-  # preferably by e-mail.
-  #
-  # Happy multilingual typesetting!
+# Information
+#                           ON ITALIAN HYPHENATION
+#
+# I have been working on patterns for the Italian language since 1987; in
+# 1992 I published
+#
+#   C. Beccari, "Computer aided hyphenation for Italian and Modern Latin",
+#               TUG vol. 13, n. 1, pp. 23-33 (1992)
+#
+# which contained a set of patterns that allowed hyphenation for both
+# Italian and Latin; a slightly modified version of the patterns published
+# in the above paper is contained in LAHYPH.TEX available on the CTAN
+# archives.
+#
+# This minor revision has been tested with an enlarged set of difficult
+# Italian words so as to comply with a larger number of technical words
+# with foreign roots. The overall number of patterns is slightly reduced,
+# but its strength is increased. As with the previous release hyathi are
+# not hyphenated in order to cope with the habits of Italian readers.
+# Similarly single vowel internal syllables are avoided.
+#
+# As the previous versions, this new set of patterns does not contain any
+# accented character so that the hyphenation algorithm behaves properly in
+# both cases, that is with OT1 and T1 encodings. With the former encoding
+# fonts do not contain accented characters, while with the latter accented
+# characters are present and sequences such as à map directly to slot "E0
+# that contains "agrave".
+#
+# Of course if you use T1 encoded fonts you get the full power of the
+# hyphenation algorithm, while if you use OT1 encoded fonts you miss some
+# possible break points; this is not a big inconvenience in Italian
+# because:
+#
+# 1) The Regulation UNI 6015 on accents specifies that compulsory accents
+#    appear only on the ending vowel of oxitone words; this means that it
+#    is almost indifferent to have or to miss the T1 encoded fonts because
+#    the only difference consists in how TeX evaluates the end of the
+#    word; in practice if you have these special facilities you get
+#    "qua-li-tà", while if you miss them, you get "qua-lità" (assuming
+#    that \righthyphenmin > 1).
+#
+# 2) Optional accents are so rare in Italian, that if you absolutely want
+#    to use them in those rare instances, and you miss the T1 encoding
+#    facilities, you should also provide explicit discretionary hyphens as
+#    in "sé\-gui\-to".
+#
+# There is no explicit hyphenation exception list because these patterns
+# proved to hyphenate correctly a very large set of words suitably chosen
+# in order to test them in the most heavy circumstances; these patterns
+# were used in the preparation of a number of books and no errors were
+# discovered.
+#
+# Nevertheless if you frequently use technical terms that you want
+# hyphenated differently from what is normally done (for example if you
+# prefer etymological hyphenation of prefixed and/or suffixed words) you
+# should insert a specific hyphenation list in the preamble of your
+# document, for example:
+#
+# \hyphenation{su-per-in-dut-to-re su-per-in-dut-to-ri}
+#
+# If you use, as you should, the italan option of the babel package, then
+# you have available the active charater " that allows you to put
+# a discretionary break at a word boundary of a compound word while
+# maintaning the hyphenation algorithm on the rest of the word.
+#
+# Please, read the babel package documentation.
+#
+# Should you find any word that gets hyphenated in a wrong way, please,
+# AFTER CHECKING ON A RELIABLE MODERN DICTIONARY, report to the author,
+# preferably by e-mail.
+#
+# Happy multilingual typesetting!

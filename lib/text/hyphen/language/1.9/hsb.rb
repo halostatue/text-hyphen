@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Upper Sorbian
 #   Converted from the TeX hyphenation/bahyph.tex file, by E. Werner (1997).
 #
@@ -12,10 +13,10 @@
 # \message{Hyphenation patterns for Upper Sorbian, E. Werner}
 # \message{Completely new revision 1997, March 22}
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::HSB = Text::Hyphen::Language.new do |lang|
-    lang.encoding "UTF-8"
+  lang.encoding "UTF-8"
   lang.patterns <<-PATTERNS
 % ě
 8ě

@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: German
 #   Converted from the TeX hyphenation/dehyphn.tex file, by Rechenzentrum
 #   der Ruhr-Universitaet Bochum (1988, 1991); Bernd Raichle/DANTE e.V.
@@ -65,11 +66,11 @@
 # Additional documentation can be found near the end of this file.
 #
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::DE1 = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
-  lang.isocode = 'de'
+  lang.isocode = "de"
   lang.patterns <<-PATTERNS
 .ab1a .abi4 .ab3l .abo2 .ab3ol .ab1or .ack2 .ag4n .ag4r .ag2u .ai2s .akt2a
 .al2e .al3k .al5l4en .al4tei .alt3s .ampe4 .amt2s .amt4sc .an3d2 .anden6k
@@ -1376,79 +1377,79 @@ zug1un 2z1uhr zu3k 2z1um.  zumen2 2zumf 2zumg 2zuml 2zumr 2z1ums zun2e zung4
 2z1wel 2z1wen 2z1wer z2werg 2z1wes 2zwet 2zwir z2wit 2z1wo z1wör z1wur 2z1wü
 4z1z z3z4a zzi1s4 z3z2o zz2ö
   PATTERNS
-#
-# -----------------------------------------------------------------
-#
-# =============== Additional Documentation ===============
-#
-#
-# Necessary Settings in TeX macro files:
-# --------------------------------------
-#
-# \lefthyphenmin, \righthyphenmin:
-#   Both parameters must be set to 2.
-#
-# \lccode <char>:
-#   To get correct hyphenation points within words containing
-#   umlauts or \ss, it's necessary to assign values > 0 to the
-#   appropriate \lccode <char> positions.
-#
-# These changes are _not_ done when reading this file and have to
-# be included in the language switching mechanism as is done in,
-# for example, `german.sty' (\lccode change for ^^Y = \ss in OT1,
-# \left-/\righthyphenmin settings).
-#
-# Entstehung und Grundsaetze dieser Trennmuster
-# ---------------------------------------------
-#
-# Diese Trennmuster fuer die neue deutsche Rechtschreibung
-# entstanden durch manuelle Ueberarbeitung der Muster fuer die
-# traditionellen Schreibregeln.
-#
-# Die jetzt erlaubten Trennstellen nach dem ersten Buchstaben
-# eines Wort(stamm)es *** fehlen ***.  (Obwohl solche Trennungen
-# haesslich sind, knnten sie in schmalen Spalten den Blocksatz
-# erleichterm.  Ihre Implementierung wuerde erfordern, die
-# Trennmuster von Grund auf neu zu berechnen.)
-#
-# Wo die neue Rechtschreibung sowohl die "traditionelle", also
-# etymologisch richtige Trennung, als auch eine Trennung nach
-# Sprechsilben erlaubt, wird weiterhin "traditionell" getrennt.
-# (Beachte:  In Woertern lateinischen Ursprungs wird "str" jetzt
-# als "s-tr" getrennt, ausser natuerlich am Anfang eines Wortstamms:
-# "Demons-tration", "Aus-tralien" usw., aber "de-struktiv".)
-#
-#
-# Versionsgeschichte
-# -------------------
-#
-# 1998-02-15  beta 19  gnhyph01.tex
-# 1998-02-24  beta 20
-# 1998-04-28       21
-# 1998-05-28       22
-# 1998-08-23       26
-# 1999-03-08       28  Umbenennung `gnhyph01' in `dehyphn',
-#                      korrigierte Makros aus `dehypht',
-#                      Lockerung des Copyright auf die Bedingungen
-#                      der `LaTeX Project Public License'
-# 2001-05-07       31
-#
-#
-## \CharacterTable
-##  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-##   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-##   Digits        \0\1\2\3\4\5\6\7\8\9
-##   Exclamation   \!     Double quote  \"     Hash (number) \#
-##   Dollar        \$     Percent       \%     Ampersand     \&
-##   Acute accent  \'     Left paren    \(     Right paren   \)
-##   Asterisk      \*     Plus          \+     Comma         \,
-##   Minus         \-     Point         \.     Solidus       \/
-##   Colon         \:     Semicolon     \;     Less than     \<
-##   Equals        \=     Greater than  \>     Question mark \?
-##   Commercial at \@     Left bracket  \[     Backslash     \\
-##   Right bracket \]     Circumflex    \^     Underscore    \_
-##   Grave accent  \`     Left brace    \{     Vertical bar  \|
-##   Right brace   \}     Tilde         \~}
-##
-## End of file `dehyphn.tex'.
+  #
+  # -----------------------------------------------------------------
+  #
+  # =============== Additional Documentation ===============
+  #
+  #
+  # Necessary Settings in TeX macro files:
+  # --------------------------------------
+  #
+  # \lefthyphenmin, \righthyphenmin:
+  #   Both parameters must be set to 2.
+  #
+  # \lccode <char>:
+  #   To get correct hyphenation points within words containing
+  #   umlauts or \ss, it's necessary to assign values > 0 to the
+  #   appropriate \lccode <char> positions.
+  #
+  # These changes are _not_ done when reading this file and have to
+  # be included in the language switching mechanism as is done in,
+  # for example, `german.sty' (\lccode change for ^^Y = \ss in OT1,
+  # \left-/\righthyphenmin settings).
+  #
+  # Entstehung und Grundsaetze dieser Trennmuster
+  # ---------------------------------------------
+  #
+  # Diese Trennmuster fuer die neue deutsche Rechtschreibung
+  # entstanden durch manuelle Ueberarbeitung der Muster fuer die
+  # traditionellen Schreibregeln.
+  #
+  # Die jetzt erlaubten Trennstellen nach dem ersten Buchstaben
+  # eines Wort(stamm)es *** fehlen ***.  (Obwohl solche Trennungen
+  # haesslich sind, knnten sie in schmalen Spalten den Blocksatz
+  # erleichterm.  Ihre Implementierung wuerde erfordern, die
+  # Trennmuster von Grund auf neu zu berechnen.)
+  #
+  # Wo die neue Rechtschreibung sowohl die "traditionelle", also
+  # etymologisch richtige Trennung, als auch eine Trennung nach
+  # Sprechsilben erlaubt, wird weiterhin "traditionell" getrennt.
+  # (Beachte:  In Woertern lateinischen Ursprungs wird "str" jetzt
+  # als "s-tr" getrennt, ausser natuerlich am Anfang eines Wortstamms:
+  # "Demons-tration", "Aus-tralien" usw., aber "de-struktiv".)
+  #
+  #
+  # Versionsgeschichte
+  # -------------------
+  #
+  # 1998-02-15  beta 19  gnhyph01.tex
+  # 1998-02-24  beta 20
+  # 1998-04-28       21
+  # 1998-05-28       22
+  # 1998-08-23       26
+  # 1999-03-08       28  Umbenennung `gnhyph01' in `dehyphn',
+  #                      korrigierte Makros aus `dehypht',
+  #                      Lockerung des Copyright auf die Bedingungen
+  #                      der `LaTeX Project Public License'
+  # 2001-05-07       31
+  #
+  #
+  ## \CharacterTable
+  ##  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+  ##   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+  ##   Digits        \0\1\2\3\4\5\6\7\8\9
+  ##   Exclamation   \!     Double quote  \"     Hash (number) \#
+  ##   Dollar        \$     Percent       \%     Ampersand     \&
+  ##   Acute accent  \'     Left paren    \(     Right paren   \)
+  ##   Asterisk      \*     Plus          \+     Comma         \,
+  ##   Minus         \-     Point         \.     Solidus       \/
+  ##   Colon         \:     Semicolon     \;     Less than     \<
+  ##   Equals        \=     Greater than  \>     Question mark \?
+  ##   Commercial at \@     Left bracket  \[     Backslash     \\
+  ##   Right bracket \]     Circumflex    \^     Underscore    \_
+  ##   Grave accent  \`     Left brace    \{     Vertical bar  \|
+  ##   Right brace   \}     Tilde         \~}
+  ##
+  ## End of file `dehyphn.tex'.
 end

@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Swedish
 #   Converted from the TeX hyphenation/sehyph.tex file, by Jan Michael
 #   Rynning (1991-1994).
@@ -7,7 +8,7 @@
 # The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
 # --------------------------------------------------------------------------
-# Swedish hyphenation patterns. 
+# Swedish hyphenation patterns.
 #
 # Copyright 1994 by Jan Michael Rynning. All rights reserved.
 # This program may be distributed and/or modified under the conditions of
@@ -35,7 +36,7 @@
 # 1994-03-03: The hyphenated dictionary now contains about 118,000 words.
 #             The hyphenation now works much better for compound words.
 #             Patgen parameters: 1 2 20, 2 1 8, 1 4 7, 3 2 1, 1 10000 4.
-#             
+#
 # This file contains Swedish hyphenation patterns for TeX.  It assumes
 # that you have fonts with the Swedish letters in the positions where
 # they occur in ISO Latin 1 (ISO 8859/1):
@@ -56,7 +57,7 @@
 #
 # Jan Michael Rynning <jmr@incolumitas.se>
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::SV = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

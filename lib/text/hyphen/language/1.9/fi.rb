@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Finnish
 #   Converted from the TeX hyphenation/fihyph.tex file, Kauko Saarinen,
 #   Computing Centre, University of Jyvaskyla, Finland, 1986 - 1989.
@@ -20,7 +21,7 @@
 #
 # *********     Patterns may be freely distributed   **********
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::FI = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
@@ -38,7 +39,7 @@ Text::Hyphen::Language::FI = Text::Hyphen::Language.new do |lang|
 1st2r % -stressi, -strategia etc.
 
 %  ------ Some special cases occuring with compound words only ----
-%  ------ There still remains well known problem as 'kaivos\-aukko' etc.
+%  ------ There still remains well known problem as 'kaivos-aukko' etc.
 %a1y   (common in borrowed words)
 ä2y y1a2 y1o2 o1y ö2y u1y2 y1u2 ö3a2 ö3o2 ä3a2 ä3o2 ä1u2 ö1u2
 a1ä % (a1ä2 ei mahdollinen!)

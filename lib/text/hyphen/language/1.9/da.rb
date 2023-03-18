@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Danish
 #   Converted from the LaTeX hyphenation/dkhyphen/dk*.tex file, by Frank
 #   Jensen (Frank.Jensen@hugin.com), copyright 1994.
@@ -24,7 +25,7 @@
 #
 # This file contains the hyphenation patterns for danish.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::DA = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

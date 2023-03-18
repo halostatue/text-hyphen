@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Interlingua
 #   Converted from the TeX hyphenation/iahyph.tex file, Version 0.2b.
 #   Released 3 July 2001, Created by Peter Kleiweg, kleiweg@let.rug.nl
@@ -16,7 +17,7 @@
 #
 # About Interlingua: http://www.interlingua.com/
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::IA = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

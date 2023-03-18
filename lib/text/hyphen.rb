@@ -7,10 +7,10 @@ end
 # hyphenation algorithm with pattern files. Each object is constructed with
 # a specific language's hyphenation patterns.
 class Text::Hyphen
-  DEBUG   = false
-  VERSION = '1.5.0'
+  DEBUG = false
+  VERSION = "1.4.1"
 
-  DEFAULT_MIN_LEFT  = 2
+  DEFAULT_MIN_LEFT = 2
   DEFAULT_MIN_RIGHT = 2
 
   # No fewer than this number of letters will show up to the left of the
@@ -38,19 +38,19 @@ class Text::Hyphen
   #
   # The language may also be specified as an instance of
   # Text::Hyphen::Language.
-  attr_accessor :language
+  #
+  # :attr_accessor: language
+  attr_reader :language
 
-  undef :language=
-  def language=(lang) #:nodoc:
-    require 'text/hyphen/language' unless defined?(Text::Hyphen::Language)
-    if lang.kind_of? Text::Hyphen::Language
+  def language=(lang) # :nodoc:
+    require "text/hyphen/language" unless defined?(Text::Hyphen::Language)
+    if lang.is_a? Text::Hyphen::Language
       @iso_language = lang.to_s.split(%r{::}o)[-1].downcase
-      @language     = lang
+      @language = lang
     else
       @iso_language = lang.downcase
       load_language
     end
-    @iso_language
   end
 
   # Returns the language's ISO 639 ID, e.g., "en_us" or "pt".
@@ -75,18 +75,18 @@ class Text::Hyphen
   #   hyp = Text::Hyphenate.new { |h| h.language = 'en_us' }
   def initialize(options = {}) # :yields self:
     @iso_language = options[:language]
-    @left         = options[:left]
-    @right        = options[:right]
-    @language     = nil
+    @left = options[:left]
+    @right = options[:right]
+    @language = nil
 
-    @cache        = {}
-    @vcache       = {}
+    @cache = {}
+    @vcache = {}
 
-    @hyphen       = {}
+    @hyphen = {}
     @begin_hyphen = {}
-    @end_hyphen   = {}
-    @both_hyphen  = {}
-    @exception    = {}
+    @end_hyphen = {}
+    @both_hyphen = {}
+    @exception = {}
 
     @first_load = true
     yield self if block_given?
@@ -94,7 +94,7 @@ class Text::Hyphen
 
     load_language
 
-    @left  ||= DEFAULT_MIN_LEFT
+    @left ||= DEFAULT_MIN_LEFT
     @right ||= DEFAULT_MIN_RIGHT
   end
 
@@ -107,19 +107,20 @@ class Text::Hyphen
   def hyphenate(word)
     word = word.downcase
     return parse_phrase(word) if phrase?(word)
-    $stderr.puts "Hyphenating #{word}" if DEBUG
+
+    warn "Hyphenating #{word}" if DEBUG
     return @cache[word] if @cache.has_key?(word)
     res = @language.exceptions[word]
     return @cache[word] = make_result_list(res) if res
 
     letters = word.scan(@language.scan_re)
-    $stderr.puts letters.inspect if DEBUG
+    warn letters.inspect if DEBUG
     word_size = letters.size
 
     result = [0] * (word_size + 1)
     right_stop = word_size - @right
 
-    updater = Proc.new do |hash, str, pos|
+    updater = proc do |hash, str, pos|
       if hash.has_key?(str)
         $stderr.print "#{pos}: #{str}: #{hash[str]}" if DEBUG
         hash[str].scan(@language.scan_re).each_with_index do |cc, ii|
@@ -130,21 +131,21 @@ class Text::Hyphen
       end
     end
 
-      # Walk the word
+    # Walk the word
     (0..right_stop).each do |pos|
       rest_length = word_size - pos
       (1..rest_length).each do |length|
-        substr = letters[pos, length].join('')
+        substr = letters[pos, length].join("")
         updater[@language.hyphen, substr, pos]
         updater[@language.start, substr, pos] if pos.zero?
-        updater[@language.stop, substr, pos] if (length == rest_length)
+        updater[@language.stop, substr, pos] if length == rest_length
       end
     end
 
     updater[@language.both, word, 0] if @language.both[word]
 
     (0..@left).each { |i| result[i] = 0 }
-    ((-1 - @right)..(-1)).each { |i| result[i] = 0 }
+    ((-1 - @right)..-1).each { |i| result[i] = 0 }
     @cache[word] = make_result_list(result)
   end
 
@@ -158,8 +159,7 @@ class Text::Hyphen
   #
   # Because hyphenation can be expensive, if the word has been visualised
   # previously, it will be returned from a per-instance cache.
-  def visualise(word, hyphen = '-')
-    return parse_phrase(word) if phrase?(word)
+  def visualise(word, hyphen = "-")
     return @vcache[word] if @vcache.has_key?(word)
     w = word.dup
     s = hyphen.size
@@ -170,7 +170,7 @@ class Text::Hyphen
     end
     @vcache[word] = w
   end
-  alias visualize visualise
+  alias_method :visualize, :visualise
 
   # Clears the per-instance hyphenation and visualization caches.
   def clear_cache!
@@ -184,25 +184,25 @@ class Text::Hyphen
   # character (since it represents a hyphen)
   #
   # +size+ characters.
-  def hyphenate_to(word, size, hyphen = '-')
+  def hyphenate_to(word, size, hyphen = "-")
     return parse_phrase(word) if phrase?(word)
     point = hyphenate(word).delete_if { |e| e >= size }.max
     if point.nil?
       [nil, word]
     else
-      [word[0 ... point] + hyphen, word[point .. -1]]
+      [word[0...point] + hyphen, word[point..-1]]
     end
   end
 
   # Returns a string describing the structure of the patterns for the
   # language of this hyphenation object.
   def stats
-    _b = @language.both.size
-    _s = @language.start.size
-    _e = @language.stop.size
-    _h = @language.hyphen.size
-    _x = @language.exceptions.size
-    _T = _b + _s + _e + _h + _x
+    stats_both = @language.both.size
+    stats_start = @language.start.size
+    stats_end = @language.stop.size
+    stats_hyphens = @language.hyphen.size
+    stats_exceptions = @language.exceptions.size
+    stats_total = stats_both + stats_start + stats_end + stats_hyphens + stats_exceptions
 
     s = <<-EOS
 
@@ -213,25 +213,25 @@ The language '%s' contains %d total hyphenation patterns.
     % 6d patterns are normal patterns.
     % 6d patterns are exceptions.
 
-EOS
-    s % [ @iso_language, _T, _s, _e, _b, _h, _x ]
+    EOS
+    s % [@iso_language, stats_total, stats_start, stats_end, stats_both, stats_hyphens, stats_exceptions]
   end
 
   def updateresult(hash, str, pos)
     if hash.has_key?(str)
-      STDERR.print "#{pos}: #{str}: #{hash[str]}" if DEBUG
+      $stderr.print "#{pos}: #{str}: #{hash[str]}" if DEBUG
       hash[str].scan(@language.scan_re).each_with_index do |c, i|
         c = c.to_i
         @result[i + pos] = c if c > @result[i + pos]
       end
-      STDERR.puts ": #{@result}" if DEBUG
+      warn ": #{@result}" if DEBUG
     end
   end
   private :updateresult
 
   def make_result_list(res)
     r = []
-    res.each_with_index { |c, i| r <<  i * (c.to_i % 2) }
+    res.each_with_index { |c, i| r << i * (c.to_i % 2) }
     r.reject { |i| i.to_i == 0 }
   end
   private :make_result_list
@@ -259,10 +259,10 @@ EOS
     p = File.dirname(loader)
     f = File.basename(loader)
     v = if RUBY_VERSION < "1.9.1"
-          "1.8"
-        else
-          "1.9"
-        end
+      "1.8"
+    else
+      "1.9"
+    end
     require File.join(p, v, f)
   end
 

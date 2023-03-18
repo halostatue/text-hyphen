@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Icelandic
 #   Converted from the TeX hyphenation/bahyph.tex file, by Jorgen Pind
 #   (1987).
@@ -52,7 +53,7 @@
 #  e.g. that if one wants to use, say, umlaut marks over u or a it is
 #  necessary to write \" a (space before a) or \"{a} instead of PLAINS \"a.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::IS = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

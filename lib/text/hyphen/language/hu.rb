@@ -1,1 +1,1 @@
-require 'text/hyphen/language/hu1'
+require "text/hyphen/language/hu1"

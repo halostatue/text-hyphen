@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Irish Gaelic
 #   Converted from the TeX hyphenation/gahyph.tex file, by Kevin P. Scannell
 #   <scannell@slu.edu> (2004).
@@ -13,37 +14,37 @@
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
 # of the License, or (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
-#%% ====================================================================
-#%%  @TeX-hyphen-file{
-#%%     author          = "Kevin P. Scannell",
-#%%     version         = "1.0",
-#%%     date            = "23 January 2004",
-#%%     time            = "15:46:12 CST",
-#%%     filename        = "gahyph.tex",
-#%%     email           = "scannell@slu.edu",
-#%%     codetable       = "ISO/ASCII",
-#%%     keywords        = "TeX, hyphen, Irish, Gaeilge",
-#%%     supported       = "yes",
-#%%     abstract        = "Hyphenation patterns for Irish (Gaeilge)",
-#%%     docstring       = "This file contains the hyphenation patterns
-#%%                        for the Irish language",
-#%%  }
-#%% ====================================================================
+#
+# %% ====================================================================
+# %%  @TeX-hyphen-file{
+# %%     author          = "Kevin P. Scannell",
+# %%     version         = "1.0",
+# %%     date            = "23 January 2004",
+# %%     time            = "15:46:12 CST",
+# %%     filename        = "gahyph.tex",
+# %%     email           = "scannell@slu.edu",
+# %%     codetable       = "ISO/ASCII",
+# %%     keywords        = "TeX, hyphen, Irish, Gaeilge",
+# %%     supported       = "yes",
+# %%     abstract        = "Hyphenation patterns for Irish (Gaeilge)",
+# %%     docstring       = "This file contains the hyphenation patterns
+# %%                        for the Irish language",
+# %%  }
+# %% ====================================================================
 #
 #    See the web page  http://borel.slu.edu/fleiscin/index.html
 #    for more information on how these patterns were generated.
-#  
-#    Please report incorrect hyphenations to the author at the 
+#
+#    Please report incorrect hyphenations to the author at the
 #    email address above.
-#message{Hyphenation patterns `gahyph.tex' Version 1.0 <2004/01/22>}
+# message{Hyphenation patterns `gahyph.tex' Version 1.0 <2004/01/22>}
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::GA = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
@@ -593,10 +594,10 @@ veant5 vear3 vearn6 3v4ei veil5b v3eo véar6 véis5 véist6 5v6ial 3v4ini vios5
 vir5 virg6 v6íc v3la 3vol4 volt3 vuít5 x3ac x5ai x5aí
   PATTERNS
 
-    # See the web page cited above for descriptions of these ambiguities.
-    # These cover capitalized versions, *including* eclipsed capitals
-    # 2004-01-25:  46 of them coming from 23 classes modulo
-    # lenition/eclipsis
+  # See the web page cited above for descriptions of these ambiguities.
+  # These cover capitalized versions, *including* eclipsed capitals
+  # 2004-01-25:  46 of them coming from 23 classes modulo
+  # lenition/eclipsis
   lang.exceptions <<-EXCEPTIONS
 bhrachtaí mbrachtaí cháintí gcáintí cheiltí gceiltí chistí gcistí choirtí
 gcoirtí chreataí gcreataí dhoirteá dhoirtear dhoirtí doirtear ndoirteá

@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: UK English
 #   Converted from the TeX hyphenation/ukhyph.tex file, by Dominik Wujastyk
 #   and Graham Toal in 1992.
@@ -38,7 +39,7 @@
 #
 # These patterns require a value of about 14000 for TeX's pattern memory size.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::EN_UK = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

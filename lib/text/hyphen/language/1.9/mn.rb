@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Mongolian
 #   Converted from the TeX hyphenation/bahyph.tex file, by Oliver Corff and
 #   Dorjpalam Dorj (1999).
@@ -8,7 +9,7 @@
 # The original copyright holds and is reproduced in the source to this file.
 # The Ruby version of these patterns are copyright 2004 Austin Ziegler.
 #--
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #        File: mnhyphen.tex
 #      Author: Oliver Corff and Dorjpalam Dorj
 #        Date: February 26th, 1999		% mls.sty prevails
@@ -39,21 +40,21 @@
 #
 #              U/B/B, February 1999
 #
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # -------------------     identification     -------------------
 #
-#message{mnhyphen.tex - Hyphenation Patterns for
+# message{mnhyphen.tex - Hyphenation Patterns for
 # 		Xalx Mongolian, LMC Encoding}
 #
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #
 # The following code is closely modelled after russian.sty and
 # its accompanying hyphenation file.
-# 
+#
 # We first must make some of the non-ASCII range characters known
 # as characters to TeX, and include case mapping information.
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::MN = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

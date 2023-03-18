@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Russian
 #   Converted from the Perl CPAN Text::Hyphen::RU file, originally written
 #   by Alex Kapranoff, <kappa at cpan.org>
@@ -8,7 +9,7 @@
 #
 # *********     Patterns may be freely distributed   **********
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::RU = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"

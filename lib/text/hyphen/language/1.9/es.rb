@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 # Hyphenation patterns for Text::Hyphen in Ruby: Spanish
 #   Converted from the TeX hyphenation/eshyph.tex file, based on the work by
 #   Javier Bezos in 1993, 1997, and 2001 - 2003.
@@ -55,7 +56,7 @@
 # .............................................................
 # TeX y tipografia            | http://perso.wanadoo.es/jbezos/
 #++
-require 'text/hyphen/language'
+require "text/hyphen/language"
 
 Text::Hyphen::Language::ES = Text::Hyphen::Language.new do |lang|
   lang.encoding "UTF-8"
