@@ -27,7 +27,7 @@ class Text::Hyphen::Language
   # The character scan regular expression to use.
   def scan_re # :nodoc:
     if RUBY_VERSION < "1.9.1"
-      return %r{.}u if @encoding =~ /utf-?8/i
+      return %r{.}u if /utf-?8/i.match?(@encoding)
     end
     %r{.}
   end
@@ -66,10 +66,10 @@ class Text::Hyphen::Language
     @pattern_text = pats.dup
 
     @patterns = {
-      :both => {},
-      :start => {},
-      :stop => {},
-      :hyphen => {}
+      both: {},
+      start: {},
+      stop: {},
+      hyphen: {}
     }
 
     plist = @pattern_text.split($/).map { |ln| ln.gsub(%r{%.*$}, "") }

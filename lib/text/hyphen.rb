@@ -7,7 +7,7 @@ end
 # hyphenation algorithm with pattern files. Each object is constructed with
 # a specific language's hyphenation patterns.
 class Text::Hyphen
-  VERSION = "1.5.0"
+  VERSION = "2.0.0"
 
   DEFAULT_MIN_LEFT = 2
   DEFAULT_MIN_RIGHT = 2
@@ -226,7 +226,7 @@ class Text::Hyphen
     if point.nil?
       [nil, word]
     else
-      [word[0...point] + hyphen, word[point..-1]]
+      [word[0...point] + hyphen, word[point..]]
     end
   end
 
@@ -240,14 +240,14 @@ class Text::Hyphen
     stats_exceptions = @language.exceptions.size
     stats_total = stats_both + stats_start + stats_end + stats_hyphens + stats_exceptions
 
-    s = <<-EOS
+    s = <<~EOS
 
-The language '%s' contains %d total hyphenation patterns.
-    % 6d patterns are word start patterns.
-    % 6d patterns are word stop patterns.
-    % 6d patterns are word start/stop patterns.
-    % 6d patterns are normal patterns.
-    % 6d patterns are exceptions.
+      The language '%s' contains %d total hyphenation patterns.
+          % 6d patterns are word start patterns.
+          % 6d patterns are word stop patterns.
+          % 6d patterns are word start/stop patterns.
+          % 6d patterns are normal patterns.
+          % 6d patterns are exceptions.
 
     EOS
     s % [@iso_language, stats_total, stats_start, stats_end, stats_both, stats_hyphens, stats_exceptions]

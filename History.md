@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0 / 2023-03-19
+
+- Development changes
+
+  - This is the same as version 1.5.0, but only supports Ruby 2.7 or higher.
+
 ## 1.5.0 / 2023-03-18
 
 - 1 new feature:

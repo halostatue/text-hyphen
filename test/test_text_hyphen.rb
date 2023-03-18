@@ -1,5 +1,3 @@
-# coding: utf-8
-
 require "test/unit"
 require "text-hyphen"
 
@@ -44,7 +42,7 @@ class TestTextHyphen < Test::Unit::TestCase
 
   def test_visualise
     @r = []
-    a = Text::Hyphen.new(:left => 0, :right => 0)
+    a = Text::Hyphen.new(left: 0, right: 0)
     assert_nothing_raised { WORDS.each { |w| @r << a.visualise(w) } }
     assert_equal(VISUAL, @r)
     WORDS.each { |w| assert_not_nil(a.instance_eval { @vcache[w] }) }
@@ -52,7 +50,7 @@ class TestTextHyphen < Test::Unit::TestCase
 
   def test_hyphenate_to
     @r = []
-    a = Text::Hyphen.new(:left => 0, :right => 0)
+    a = Text::Hyphen.new(left: 0, right: 0)
     assert_nothing_raised { WORDS.each { |w| @r << a.hyphenate_to(w, 5) } }
     assert_equal(HY_TO, @r)
     WORDS.each { |w| assert_not_nil(a.instance_eval { @cache[w] }) }
@@ -72,17 +70,17 @@ class TestTextHyphen < Test::Unit::TestCase
   end
 
   def test_russian
-    a = Text::Hyphen.new(:language => "ru").visualize("скоропалительный")
+    a = Text::Hyphen.new(language: "ru").visualize("скоропалительный")
     assert_equal "ско-ро-па-ли-тель-ный", a
   end
 
   def test_hyphenate_sentence
-    a = Text::Hyphen.new(:left => 0, :right => 0).hyphenate("This useful library supports phrases and sentences.")
+    a = Text::Hyphen.new(left: 0, right: 0).hyphenate("This useful library supports phrases and sentences.")
     assert_equal [8, 14, 23, 27, 34, 44], a
   end
 
   def test_visualise_sentence
-    a = Text::Hyphen.new(:left => 0, :right => 0).visualize("This useful library supports phrases and sentences.")
+    a = Text::Hyphen.new(left: 0, right: 0).visualize("This useful library supports phrases and sentences.")
     assert_equal "This use-ful li-brary sup-port-s phras-es and sen-tences.", a
   end
 end

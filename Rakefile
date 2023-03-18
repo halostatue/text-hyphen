@@ -13,6 +13,8 @@ Hoe.plugin :rubygems
 TextHyphenSpec = Hoe.spec "text-hyphen" do
   developer("Austin Ziegler", "halostatue@gmail.com")
 
+  require_ruby_version ">= 2.7", "< 4"
+
   self.licenses = ["MIT", "Various"]
 
   self.history_file = "History.md"

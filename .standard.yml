@@ -1,5 +1,4 @@
 parallel: true
-ruby_version: 1.8
+ruby_version: 2.7
 ignore:
-  - '*.gemspec'
-  - 'lib/text/hyphen/language/1.8/*.rb'
+  - 'text-hyphen.gemspec'
