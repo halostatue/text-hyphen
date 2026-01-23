@@ -1,7 +1,7 @@
 # text-hyphen
 
 - home :: https://rubygems.org/gems/text-hyphen
-- issues :: https://rubygems.org/gems/text-hyphen/issues
+- issues :: https://github.com/halostatue/text-hyphen/issues
 
 ## Description
 
