@@ -1,4 +1,3 @@
-.standard.yml
 Code-of-Conduct.md
 Contributing.md
 History.md

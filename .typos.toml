@@ -1,0 +1,7 @@
+files.extend-exclude = ["lib/text/hyphen/language/*"]
+
+[default.extend-identifiers]
+
+[default.extend-words]
+"ful" = "ful"
+"ser" = "ser"

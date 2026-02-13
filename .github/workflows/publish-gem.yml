@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - lib/color/version.rb
+
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+    paths:
+      - lib/color/version.rb
+
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    name: Release color
+    if: github.repository == 'halostatue/color' && (github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged))
+
+    runs-on: ubuntu-latest
+    environment: release
+
+    env:
+      rubygems_release_gem: true
+
+    permissions:
+      contents: write # Create a new tag
+      id-token: write # Authenticate for gem publishing
+
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            fulcio.sigstore.dev:443
+            github.com:443
+            index.rubygems.org:443
+            objects.githubusercontent.com:443
+            rekor.sigstore.dev:443
+            release-assets.githubusercontent.com:443
+            rubygems.org:443
+            tuf-repo-cdn.sigstore.dev:443
+
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: true
+
+      - id: rubygems
+        run: |
+          ruby -e \
+            'print "version=", Gem::Specification.load(ARGV[0]).rubygems_version, "\n"' \
+            color.gemspec >>"${GITHUB_OUTPUT}"
+
+      - uses: ruby/setup-ruby@d354de180d0c9e813cfddfcbdc079945d4be589b # v1.275.0
+        with:
+          bundler-cache: false
+          ruby-version: ruby
+
+      - name: Install dependencies
+        run: |
+          gem update --system="${RUBYGEMS_VERSION}"
+          bundle install --jobs 4 --retry 3
+        env:
+          RUBYGEMS_VERSION: ${{ steps.rubygems.outputs.version }}
+
+      - uses: rubygems/release-gem@1c162a739e8b4cb21a676e97b087e8268d8fc40b # v1.1.2
+
+      - name: Show the status if release failed
+        if: failure()
+        run: |
+          git status
+          git diff
+
+  publish_docs:
+    needs: release
+    permissions:
+      contents: read
+      pages: write    # Publish documentation
+      id-token: write # Authenticate for gem publishing
+    uses: ./.github/workflows/publish-docs.yml

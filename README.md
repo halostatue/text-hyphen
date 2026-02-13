@@ -6,14 +6,14 @@
 ## Description
 
 Text::Hyphen is a Ruby library to hyphenate words in various languages using
-Ruby-fied versions of TeX hyphenation patterns. It will properly hyphenate
-various words according to the rules of the language the word is written in. The
+Ruby versions of TeX hyphenation patterns. It will properly hyphenate various
+words according to the rules of the language the word is written in. The
 algorithm is based on that of the TeX typesetting system by Donald E. Knuth.
 
-This is originally based on the Perl implementation of [TeX::Hyphen][] and the
-[Ruby port][]. The language hyphenation pattern files are based on the sources
-available from [CTAN][] as of 2004.12.19 and have been manually translated by
-Austin Ziegler.
+This is originally based on the Perl implementation of
+[TeX::Hyphen][TeX::Hyphen] and the [Ruby port][Ruby port]. The language
+hyphenation pattern files are based on the sources available from [CTAN][CTAN]
+as of 2004.12.19 and have been manually translated by Austin Ziegler.
 
 This is a small feature release adding Russian language support and fixing a bug
 in the custom hyphen support introduced last version. This release provides both

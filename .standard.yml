@@ -1,4 +1,5 @@
+---
 parallel: true
-ruby_version: 2.7
+ruby_version: 3.2
 ignore:
   - 'text-hyphen.gemspec'
