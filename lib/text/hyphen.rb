@@ -283,8 +283,8 @@ The language '%s' contains %d total hyphenation patterns.
     end
 
     unless @language
-      require "text/hyphen/language/#{@iso_language}"
-      @language = Text::Hyphen::Language.const_get(@iso_language.upcase)
+      @language = require_language_definition(@iso_language)
+      @iso_language = @language.isocode if @language.isocode
     end
 
     @left  ||= @language.left
@@ -297,6 +297,14 @@ The language '%s' contains %d total hyphenation patterns.
     language.match?(/\A[a-z][a-z0-9_]+\z/) && !language.end_with?("_")
   end
   private :valid_language?
+
+  def require_language_definition(language)
+    require "text/hyphen/language/#{language}"
+    Text::Hyphen::Language.const_get(language.upcase)
+  rescue LoadError
+    raise ArgumentError, "unknown language: #{language.inspect}"
+  end
+  private :require_language_definition
 
   def split_phrase(phrase)
     phrase.split(/[[:space:]]+/)

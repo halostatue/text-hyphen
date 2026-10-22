@@ -85,4 +85,9 @@ class TestTextHyphen < Test::Unit::TestCase
     a = Text::Hyphen.new(:left => 0, :right => 0).visualize("This useful library supports phrases and sentences.")
     assert_equal "This use-ful li-brary sup-port-s phras-es and sen-tences.", a
   end
+
+  def test_iso_language_uses_language_isocode
+    assert_equal "de", Text::Hyphen.new(:language => "de1").iso_language
+    assert_equal "hu", Text::Hyphen.new(:language => "hu1").iso_language
+  end
 end

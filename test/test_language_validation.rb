@@ -43,7 +43,7 @@ class TestLanguageValidation < Test::Unit::TestCase
 
   def test_accepts_valid_languages
     %w[en_us de1 hu1 hsb pt].each do |language|
-      assert_equal language, Text::Hyphen.new(:language => language).iso_language
+      assert_nothing_raised(language) { Text::Hyphen.new(:language => language) }
     end
   end
 
@@ -51,7 +51,7 @@ class TestLanguageValidation < Test::Unit::TestCase
     assert_equal "en_us", Text::Hyphen.new(:language => "EN-us").iso_language
   end
 
-  def test_unknown_but_well_formed_language_raises_load_error
-    assert_raise(LoadError) { Text::Hyphen.new(:language => "xx") }
+  def test_rejects_unknown_but_well_formed_language
+    assert_raise(ArgumentError) { Text::Hyphen.new(:language => "xx") }
   end
 end
