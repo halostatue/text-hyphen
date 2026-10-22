@@ -276,19 +276,27 @@ The language '%s' contains %d total hyphenation patterns.
     return if @first_load
 
     @iso_language ||= "en_us"
+    @iso_language = @iso_language.to_s.downcase.tr("-", "_")
+
+    unless valid_language?(@iso_language)
+      raise ArgumentError, "invalid language: #{@iso_language.inspect}"
+    end
 
     unless @language
       require "text/hyphen/language/#{@iso_language}"
       @language = Text::Hyphen::Language.const_get(@iso_language.upcase)
-      @iso_language = @language.isocode if @language.isocode
     end
 
-    @left ||= @language.left
+    @left  ||= @language.left
     @right ||= @language.right
-
     @iso_language
   end
   private :load_language
+
+  def valid_language?(language)
+    language.match?(/\A[a-z][a-z0-9_]+\z/) && !language.end_with?("_")
+  end
+  private :valid_language?
 
   def split_phrase(phrase)
     phrase.split(/[[:space:]]+/)
