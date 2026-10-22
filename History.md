@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased
+
+- Security:
+
+  - Language codes are validated before they are passed to `require`. A
+    crafted code such as `../../foo` could load any Ruby file on the load path
+    (GHSA-x432-p2c9-v84r). Codes may now only contain lowercase letters,
+    digits and underscores; anything else raises `ArgumentError`.
+
+- Changes:
+
+  - Unknown language codes raise `ArgumentError` instead of `LoadError`.
+
+  - Language codes with dashes (`en-us`) are normalised as documented.
+
 ## 1.5.0 / 2023-03-18
 
 - 1 new feature:
