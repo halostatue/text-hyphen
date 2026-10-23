@@ -19,7 +19,7 @@ class Text::Hyphen
     require File.join(p, v, f)
   end
 
-  VERSION = "1.5.0"
+  VERSION = "1.6.0"
 
   DEFAULT_MIN_LEFT = 2
   DEFAULT_MIN_RIGHT = 2
